@@ -44,12 +44,13 @@
   border: 3px solid transparent;
 
   &.active-profile {
-    border: 3px solid rgba(119, 99, 197, 1);
+    border: 3px solid #7451eb;
   }
 }
 
 .active {
   font-weight: 700;
+  color: #7451eb;
 }
 
 aside {
