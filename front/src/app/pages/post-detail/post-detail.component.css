@@ -17,13 +17,18 @@ h1 {
   align-items: center;
 
   span {
-    background-color: lightgray;
+    background-color: rgba(245, 245, 245, 1);
     padding: 0.5rem;
     border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: grey;
+      background-color: lightgray;
     }
   }
+}
+
+button span {
+  font-family: "Material Icons";
+  font-size: 1.5rem;
 }
