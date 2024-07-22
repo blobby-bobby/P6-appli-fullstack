@@ -1,0 +1,15 @@
+<app-nav-layout>
+  <div class="posts-top-layout">
+    <button mat-raised-button color="primary">Créer un article</button>
+
+    <button mat-button [matMenuTriggerFor]="menu">
+      <p class="sort-label">Trier par <span class="sort-icon">sort</span></p>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Date</button>
+      <button mat-menu-item>Titre</button>
+    </mat-menu>
+  </div>
+
+  <app-post-list></app-post-list>
+</app-nav-layout>

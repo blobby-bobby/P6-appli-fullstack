@@ -1,0 +1,19 @@
+<app-nav-layout>
+  <section *ngIf="post">
+    <h1>{{ post.title }}</h1>
+    <div class="post-info">
+      <time>{{ post.createdAt }}</time>
+      <cite>{{ post.author }}</cite>
+      <div class="topics">
+        <span *ngFor="let topic of post.topics">{{ topic }}</span>
+      </div>
+    </div>
+    <p>{{ post.content }}</p>
+  </section>
+
+  <hr />
+
+  <h2>Commentaires</h2>
+
+  <textarea></textarea>
+</app-nav-layout>

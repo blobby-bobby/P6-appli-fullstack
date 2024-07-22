@@ -1,0 +1,45 @@
+<nav class="desktop-nav-container">
+  <div class="desktop-nav">
+    <a routerLink="/posts">
+      <img
+        class="logo"
+        src="/assets/logo_p6.png"
+        alt="logo"
+        aria-labelledby="Monde de dev"
+      />
+    </a>
+
+    <ul>
+      <li><a routerLink="/posts" routerLinkActive="active">Articles</a></li>
+      <li><a routerLink="/topics" routerLinkActive="active">Thèmes</a></li>
+      <li>
+        <img
+          src="/assets/raw_avatar.png"
+          alt="avatar"
+          routerLink="/profile"
+          routerLinkActive="active-profile"
+          class="avatar"
+        />
+      </li>
+    </ul>
+
+    <span class="toggle-icon">menu</span>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<aside>
+  <nav class="mobile-nav">
+    <ul>
+      <li><a routerLink="/posts" routerLinkActive="active">Articles</a></li>
+      <li><a routerLink="/topics" routerLinkActive="active">Thèmes</a></li>
+    </ul>
+    <img
+      src="/assets/raw_avatar.png"
+      alt="avatar"
+      routerLink="/profile"
+      routerLinkActive="active-profile"
+      class="avatar"
+    />
+  </nav>
+</aside>

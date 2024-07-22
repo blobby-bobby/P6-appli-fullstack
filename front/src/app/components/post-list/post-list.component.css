@@ -1,0 +1,23 @@
+.posts-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+
+  article {
+    background: lightgray;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      scale: 1.02;
+    }
+
+    .post-info {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

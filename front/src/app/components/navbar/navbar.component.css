@@ -1,0 +1,100 @@
+.desktop-nav-container {
+  box-shadow: inset 0 -4px 4px 0 rgba(200, 220, 250, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.desktop-nav {
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .logo {
+    height: 4rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .toggle-icon {
+    display: none;
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  border: 3px solid transparent;
+
+  &.active-profile {
+    border: 3px solid rgba(119, 99, 197, 1);
+  }
+}
+
+.active {
+  font-weight: 700;
+}
+
+aside {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  justify-content: flex-end;
+  translate: 0 100%;
+
+  .mobile-nav {
+    height: 100%;
+    width: 60%;
+    background: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    text-align: end;
+    font-size: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-nav {
+    .toggle-icon {
+      display: block;
+    }
+    ul {
+      display: none;
+    }
+  }
+  aside {
+    display: flex;
+  }
+}

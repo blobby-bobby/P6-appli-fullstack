@@ -1,0 +1,9 @@
+<div *ngIf="posts" class="posts-feed">
+  <article *ngFor="let post of posts" (click)="getPostById(post.id)">
+    <h2>{{ post.title }}</h2>
+    <div class="post-info">
+      <time>{{ post.createdAt }}</time> <cite>{{ post.author }}</cite>
+    </div>
+    <p>{{ post.content }}</p>
+  </article>
+</div>
