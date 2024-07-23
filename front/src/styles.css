@@ -23,3 +23,9 @@ a {
 li {
   list-style-type: none;
 }
+
+article {
+  background-color: rgba(245, 245, 245, 1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
