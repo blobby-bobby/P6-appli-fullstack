@@ -1,17 +1,27 @@
 <app-auth-layout title="S'inscrire">
-  <label for="username">
-    <input id="username" type="text" placeholder="Enter your username" />
-  </label>
+  <form class="register-form">
+    <mat-form-field class="form-field">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" placeholder="Enter your username" value="" />
+    </mat-form-field>
 
-  <label for="email">
-    <input id="email" type="text" placeholder="Enter your email" />
-  </label>
+    <mat-form-field class="form-field">
+      <mat-label>Email ou nom d'utilisateur</mat-label>
+      <input matInput type="text" placeholder="Enter your email" value="" />
+    </mat-form-field>
 
-  <label for="password">
-    <input id="password" type="password" placeholder="Enter your password" />
-  </label>
+    <mat-form-field class="form-field">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Enter your password"
+        value=""
+      />
+    </mat-form-field>
 
-  <button mat-raised-button color="primary" routerLink="/posts">
-    S'inscrire
-  </button>
+    <button mat-raised-button color="primary" routerLink="/posts">
+      S'inscrire
+    </button>
+  </form>
 </app-auth-layout>
