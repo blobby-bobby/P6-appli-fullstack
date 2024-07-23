@@ -1,6 +1,8 @@
 <app-nav-layout>
   <div class="posts-top-layout">
-    <button mat-raised-button color="primary">Créer un article</button>
+    <button mat-raised-button color="primary" routerLink="/create-post">
+      Créer un article
+    </button>
 
     <button mat-button [matMenuTriggerFor]="menu">
       <p class="sort-label">Trier par <span class="sort-icon">sort</span></p>

@@ -6,6 +6,7 @@ import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.componen
 import { PostListComponent } from '../../components/post-list/post-list.component';
 import { Post } from '../../../types/Post';
 import { PostsService } from '../../services/posts.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -16,6 +17,7 @@ import { PostsService } from '../../services/posts.service';
     MatMenuModule,
     NavLayoutComponent,
     PostListComponent,
+    RouterLink,
   ],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.css',
