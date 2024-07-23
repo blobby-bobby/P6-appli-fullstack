@@ -48,9 +48,14 @@
   }
 }
 
-.active {
-  font-weight: 700;
-  color: #7451eb;
+.navbar-link {
+  text-decoration: none;
+  color: black;
+
+  &.active {
+    font-weight: 700;
+    color: #7451eb;
+  }
 }
 
 aside {

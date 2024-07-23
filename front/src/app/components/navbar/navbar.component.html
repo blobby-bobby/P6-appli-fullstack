@@ -10,8 +10,16 @@
     </a>
 
     <ul>
-      <li><a routerLink="/posts" routerLinkActive="active">Articles</a></li>
-      <li><a routerLink="/topics" routerLinkActive="active">Thèmes</a></li>
+      <li>
+        <a routerLink="/posts" class="navbar-link" routerLinkActive="active"
+          >Articles</a
+        >
+      </li>
+      <li>
+        <a routerLink="/topics" class="navbar-link" routerLinkActive="active"
+          >Thèmes</a
+        >
+      </li>
       <li>
         <img
           src="/assets/raw_avatar.png"
@@ -31,8 +39,16 @@
 <aside [ngClass]="{ active: isMenuOpen }" (click)="toggleMenu()">
   <nav class="mobile-nav" [ngClass]="{ active: isMenuOpen }">
     <ul>
-      <li><a routerLink="/posts" routerLinkActive="active">Articles</a></li>
-      <li><a routerLink="/topics" routerLinkActive="active">Thèmes</a></li>
+      <li>
+        <a routerLink="/posts" class="navbar-link" routerLinkActive="active"
+          >Articles</a
+        >
+      </li>
+      <li>
+        <a routerLink="/topics" class="navbar-link" routerLinkActive="active"
+          >Thèmes</a
+        >
+      </li>
     </ul>
     <img
       src="/assets/raw_avatar.png"
