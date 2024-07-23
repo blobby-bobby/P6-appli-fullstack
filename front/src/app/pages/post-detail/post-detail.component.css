@@ -10,6 +10,12 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.post-title {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .topics {
   display: flex;
   gap: 0.5rem;
@@ -28,7 +34,18 @@ h1 {
   }
 }
 
-button span {
-  font-family: "Material Icons";
-  font-size: 1.5rem;
+.post,
+hr,
+.comments {
+  margin: 0 0 2rem 4rem;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+
+  .mat-mdc-form-field {
+    flex: 1;
+  }
 }

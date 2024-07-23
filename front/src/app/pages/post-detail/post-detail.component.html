@@ -1,6 +1,9 @@
-<app-nav-layout>
-  <section *ngIf="post">
+<app-nav-layout *ngIf="post">
+  <div class="post-title">
+    <app-navigate-back-arrow></app-navigate-back-arrow>
     <h1>{{ post.title }}</h1>
+  </div>
+  <section class="post">
     <div class="post-info">
       <time>{{ post.createdAt }}</time>
       <cite>{{ post.author }}</cite>
@@ -13,17 +16,21 @@
 
   <hr />
 
-  <h2>Commentaires</h2>
+  <section class="comments">
+    <h2>Commentaires</h2>
 
-  <form>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Leave a comment"></textarea>
-    </mat-form-field>
+    <form class="comment-form">
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a comment"></textarea>
+      </mat-form-field>
 
-    <button mat-icon-button aria-label="Send comment">
-      <mat-icon>sent</mat-icon>
-    </button>
-  </form>
-
-  <textarea></textarea>
+      <button
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a open in new tab icon"
+      >
+        <mat-icon>send</mat-icon>
+      </button>
+    </form>
+  </section>
 </app-nav-layout>

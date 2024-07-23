@@ -8,6 +8,7 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow/navigate-back-arrow.component';
 
 @Component({
   selector: 'app-post-detail',
@@ -20,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInput,
     MatButtonModule,
     MatIconModule,
+    NavigateBackArrowComponent,
   ],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.css',
