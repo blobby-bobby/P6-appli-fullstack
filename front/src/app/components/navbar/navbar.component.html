@@ -23,13 +23,13 @@
       </li>
     </ul>
 
-    <span class="toggle-icon">menu</span>
+    <span class="toggle-icon" (click)="toggleMenu()">menu</span>
   </div>
 </nav>
 
 <!-- mobile menu -->
-<aside>
-  <nav class="mobile-nav">
+<aside [ngClass]="{ active: isMenuOpen }" (click)="toggleMenu()">
+  <nav class="mobile-nav" [ngClass]="{ active: isMenuOpen }">
     <ul>
       <li><a routerLink="/posts" routerLinkActive="active">Articles</a></li>
       <li><a routerLink="/topics" routerLinkActive="active">Thèmes</a></li>

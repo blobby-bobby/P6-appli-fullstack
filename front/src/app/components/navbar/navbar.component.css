@@ -61,11 +61,17 @@ aside {
   top: 0;
   left: 0;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background: transparent;
+  backdrop-filter: blur(0px);
   justify-content: flex-end;
-  translate: 0 100%;
+  translate: 100% 0;
+  transition: all 0.3s ease-in;
+
+  &.active {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    translate: 0 0;
+  }
 
   .mobile-nav {
     height: 100%;
@@ -79,6 +85,12 @@ aside {
     gap: 2rem;
     text-align: end;
     font-size: 1.25rem;
+    translate: 100% 0;
+    transition: all 0.2s ease-in-out 0.2s;
+
+    &.active {
+      translate: 0 0;
+    }
   }
 
   li {
