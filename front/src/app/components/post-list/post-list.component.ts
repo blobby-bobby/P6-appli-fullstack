@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { Post } from '../../../types/Post';
 import { PostsService } from '../../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
 
 @Component({
   selector: 'app-post-list',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor, GridLayoutComponent],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.css',
 })

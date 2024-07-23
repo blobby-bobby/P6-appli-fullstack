@@ -1,23 +1,23 @@
-.posts-feed {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+article {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
-  article {
-    background-color: rgba(245, 245, 245, 1);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+  &:hover {
+    scale: 1.02;
+  }
 
-    &:hover {
-      scale: 1.02;
-    }
+  .post-info {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 1rem;
+  }
 
-    .post-info {
-      display: flex;
-      gap: 3rem;
-      margin-bottom: 1rem;
-    }
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
