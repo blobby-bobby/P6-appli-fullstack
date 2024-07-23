@@ -1,3 +1,10 @@
 <app-nav-layout>
-  <app-topics-list></app-topics-list>
+  <app-grid-layout *ngIf="topics" class="topics-list">
+    <app-topic-card
+      *ngFor="let topic of topics"
+      [name]="topic.name"
+      [description]="topic.description"
+      [hasSuscribed]="true"
+    ></app-topic-card>
+  </app-grid-layout>
 </app-nav-layout>

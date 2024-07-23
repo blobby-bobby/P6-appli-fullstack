@@ -18,5 +18,12 @@
   </div>
   <hr />
   <h2>Abonnements</h2>
-  <p>Liste des abonnements</p>
+  <app-grid-layout *ngIf="topics" class="topics-list">
+    <app-topic-card
+      *ngFor="let topic of topics"
+      [name]="topic.name"
+      [description]="topic.description"
+      [hasSuscribed]="true"
+    ></app-topic-card>
+  </app-grid-layout>
 </app-nav-layout>
