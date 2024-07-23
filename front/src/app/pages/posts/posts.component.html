@@ -6,8 +6,8 @@
       <p class="sort-label">Trier par <span class="sort-icon">sort</span></p>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Date</button>
-      <button mat-menu-item>Titre</button>
+      <button mat-menu-item (click)="sortPosts('date')">Date</button>
+      <button mat-menu-item (click)="sortPosts('title')">Titre</button>
     </mat-menu>
   </div>
 
