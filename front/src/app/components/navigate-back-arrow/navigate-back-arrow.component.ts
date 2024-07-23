@@ -5,8 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './navigate-back-arrow.component.html',
-  styleUrl: './navigate-back-arrow.component.css'
+  styleUrl: './navigate-back-arrow.component.css',
 })
 export class NavigateBackArrowComponent {
-
+  navigateBack() {
+    window.history.back();
+  }
 }
