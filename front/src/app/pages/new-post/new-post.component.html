@@ -1,0 +1,33 @@
+<app-nav-layout>
+  <div class="new-post-top-layout">
+    <div class="arrow-back">
+      <app-navigate-back-arrow></app-navigate-back-arrow>
+    </div>
+    <h1>Créer un nouvel article</h1>
+  </div>
+
+  <form>
+    <mat-form-field class="example-full-width">
+      <mat-label>Sélectionner un thème</mat-label>
+      <mat-select>
+        @for (topicOption of topicOptions; track topicOption) {
+        <mat-option [value]="topicOption.value">{{
+          topicOption.viewValue
+        }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Titre de l'article</mat-label>
+      <input matInput placeholder="Titre de l'article" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Contenu de l'article</mat-label>
+      <textarea matInput placeholder="Contenu de l'article"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Créer</button>
+  </form>
+</app-nav-layout>
