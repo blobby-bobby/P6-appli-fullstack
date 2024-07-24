@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { TOPICS } from '../../types/topics-mock';
 import { Topic } from '../../types/Topic';
+import { TOPICS } from '../../data/topics-mock';
 
 @Injectable({
   providedIn: 'root',
