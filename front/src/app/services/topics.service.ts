@@ -11,4 +11,12 @@ export class TopicsService {
   getAllTopics(): Topic[] {
     return TOPICS;
   }
+
+  suscribeTopic(id: number): void {
+    // TO DO
+  }
+
+  unsuscribeTopic(id: number): void {
+    // TO DO
+  }
 }
