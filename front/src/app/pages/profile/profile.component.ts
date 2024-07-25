@@ -9,6 +9,7 @@ import { TopicsService } from '../../services/topics.service';
 import { NgFor, NgIf } from '@angular/common';
 import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
 import { TopicCardComponent } from '../../components/topic-card/topic-card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -23,6 +24,7 @@ import { TopicCardComponent } from '../../components/topic-card/topic-card.compo
     NgIf,
     GridLayoutComponent,
     TopicCardComponent,
+    RouterLink,
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
