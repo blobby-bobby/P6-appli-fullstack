@@ -1,0 +1,43 @@
+#Database settings
+spring:
+  main.allow-circular-references: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # fileupload
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+      enabled: true
+
+#JWT Security
+mdd.api:
+  lifespan: 9999 #jwt duration in minutes
+  secret: ${JWT_SECRET}
+  dev-url: ${server.servlet.context-path}/
+  prod-url: test.com
+  files-upload: files-upload
+
+#Server settings
+server:
+  port: 3001
+  servlet.context-path: /api
+
+#Logging levels
+logging:
+  level:
+    root: ERROR
+    mdd.api: INFO
+    org.springframework.boot.web.embedded.tomcat: INFO
+  file:
+    path: logs/
+    max-history: 5
