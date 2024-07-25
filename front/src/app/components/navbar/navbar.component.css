@@ -39,9 +39,11 @@
 
 .avatar {
   border-radius: 50%;
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
   border: 3px solid transparent;
+  background-color: rgba(217, 217, 217, 1);
 
   &.active-profile {
     border: 3px solid #7451eb;
