@@ -16,10 +16,10 @@ import java.util.List;
 @Configuration
 public class OpenAPIConfig {
 
-    @Value("${fr.ishtamar.starter.dev-url}")
+    @Value("${mdd.api.dev-url}")
     private String devUrl;
 
-    @Value("${fr.ishtamar.starter.prod-url}")
+    @Value("${mdd.api.prod-url}")
     private String prodUrl;
 
     private SecurityScheme createAPIKeyScheme() {

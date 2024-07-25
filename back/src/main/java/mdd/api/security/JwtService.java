@@ -18,10 +18,10 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    @Value("${fr.ishtamar.starter.secret}")
+    @Value("${mdd.api.secret}")
     private String secret;
 
-    @Value("${fr.ishtamar.starter.lifespan}")
+    @Value("${mdd.api.lifespan}")
     private Long lifespan;
 
     public String generateToken(String userName) {

@@ -14,7 +14,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/file")
 public class FileTransferController {
-    @Value("${fr.ishtamar.starter.files-upload}")
+    @Value("${mdd.api.files-upload}")
     private String filesUpload;
 
     @ResponseBody

@@ -14,7 +14,7 @@ import java.nio.file.StandardCopyOption;
 
 @Service
 public class FileUploadUtil {
-	@Value("${fr.ishtamar.starter.files-upload}")
+	@Value("${mdd.api.files-upload}")
 	private String filesUpload;
 
 	public String saveFile(String fileName, MultipartFile multipartFile) throws IOException {
