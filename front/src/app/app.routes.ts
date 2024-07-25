@@ -10,11 +10,15 @@ import { NewPostComponent } from './pages/new-post/new-post.component';
 
 export const routes: Routes = [
   { path: '', component: AuthComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: 'posts/:id', component: PostDetailComponent },
-  { path: 'topics', component: TopicsComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'create-post', component: NewPostComponent },
+  { path: 'login', title: 'Se connecter', component: LoginComponent },
+  { path: 'register', title: "S'inscrire", component: RegisterComponent },
+  { path: 'posts', title: 'Bienvenue sur MDD', component: PostsComponent },
+  { path: 'posts/:id', title: 'Bonne lecture', component: PostDetailComponent },
+  { path: 'topics', title: 'Les thèmes', component: TopicsComponent },
+  { path: 'profile', title: 'Mon profil', component: ProfileComponent },
+  {
+    path: 'create-post',
+    title: 'Créer un article',
+    component: NewPostComponent,
+  },
 ];
