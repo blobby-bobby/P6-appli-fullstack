@@ -1,13 +1,29 @@
 <app-auth-layout title="S'inscrire">
-  <form class="register-form">
+  <form
+    class="register-form"
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+  >
     <mat-form-field class="form-field">
       <mat-label>Username</mat-label>
-      <input matInput type="text" placeholder="Enter your username" value="" />
+      <input
+        matInput
+        type="text"
+        placeholder="Enter your username"
+        value=""
+        formControlName="username"
+      />
     </mat-form-field>
 
     <mat-form-field class="form-field">
       <mat-label>Email</mat-label>
-      <input matInput type="text" placeholder="Enter your email" value="" />
+      <input
+        matInput
+        type="text"
+        placeholder="Enter your email"
+        value=""
+        formControlName="email"
+      />
     </mat-form-field>
 
     <mat-form-field class="form-field">
@@ -16,11 +32,28 @@
         matInput
         type="password"
         placeholder="Enter your password"
+        formControlName="password"
         value=""
       />
     </mat-form-field>
 
-    <button mat-raised-button color="primary" routerLink="/posts">
+    <mat-form-field class="form-field">
+      <mat-label>Confirm your password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Confirm your password"
+        formControlName="passwordConfirm"
+        value=""
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="registerForm.invalid"
+      type="submit"
+    >
       S'inscrire
     </button>
   </form>
