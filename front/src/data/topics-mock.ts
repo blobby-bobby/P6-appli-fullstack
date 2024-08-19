@@ -1,4 +1,4 @@
-import { Topic } from '../types/Topic';
+import { Topic } from '../interfaces/Topic';
 
 export const TOPICS: Topic[] = [
   {

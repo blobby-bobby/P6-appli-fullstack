@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Topic } from '../../types/Topic';
+import { Topic } from '../../interfaces/Topic';
 import { TOPICS } from '../../data/topics-mock';
 
 @Injectable({
