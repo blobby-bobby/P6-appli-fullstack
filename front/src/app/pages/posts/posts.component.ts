@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
 import { PostListComponent } from '../../components/post-list/post-list.component';
-import { Post } from '../../../types/Post';
+import { Post } from '../../../interfaces/Post';
 import { PostsService } from '../../services/posts.service';
 import { RouterLink } from '@angular/router';
 

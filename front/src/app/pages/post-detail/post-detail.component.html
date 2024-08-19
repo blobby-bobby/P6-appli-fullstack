@@ -8,7 +8,7 @@
       <time>{{ post.createdAt }}</time>
       <cite>{{ post.author }}</cite>
       <div class="topics">
-        <span *ngFor="let topic of post.topics">{{ topic }}</span>
+        <span>{{ post.topic }}</span>
       </div>
     </div>
     <p>{{ post.content }}</p>
