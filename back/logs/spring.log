@@ -1,0 +1,5 @@
+2024-08-19T19:23:03.030+02:00  INFO 12361 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 12361 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
+2024-08-19T19:23:03.058+02:00  INFO 12361 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
+2024-08-19T19:23:05.425+02:00  INFO 12361 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
+2024-08-19T19:23:09.239+02:00  INFO 12361 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3002 (http) with context path '/api'
+2024-08-19T19:23:09.257+02:00  INFO 12361 --- [main] mdd.api.ApiApplication                   : Started ApiApplication in 7.441 seconds (process running for 8.634)

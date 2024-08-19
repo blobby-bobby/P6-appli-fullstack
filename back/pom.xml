@@ -107,12 +107,6 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!--This lets use filesystem copy, delete, etc.-->
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.15.1</version>
-		</dependency>
 	</dependencies>
 
 	<build>
