@@ -13,6 +13,14 @@
         value=""
         formControlName="username"
       />
+
+      @if (registerForm.get('username')?.errors?.['minlength']) {
+      <mat-error
+        >Username must be at least
+        {{ registerForm.get('username')?.errors?.['minlength']?.requiredLength }}
+        characters long.</mat-error
+      >
+      }
     </mat-form-field>
 
     <mat-form-field class="form-field">
@@ -24,6 +32,13 @@
         value=""
         formControlName="email"
       />
+
+      @if (registerForm.get('email')?.errors?.['email']) {
+      <mat-error
+        >Invalid email format. Please enter a valid email (eg:
+        <i>mondededev&#64;mail.com</i>).</mat-error
+      >
+      }
     </mat-form-field>
 
     <mat-form-field class="form-field">
@@ -35,6 +50,14 @@
         formControlName="password"
         value=""
       />
+
+      @if (registerForm.get('password')?.errors?.['pattern']) {
+      <mat-error
+        >Password must be at least
+        {{ registerForm.get('password')?.errors?.['pattern']?.requiredLength }}
+        characters long.</mat-error
+      >
+      }
     </mat-form-field>
 
     <mat-form-field class="form-field">
@@ -46,6 +69,10 @@
         formControlName="passwordConfirm"
         value=""
       />
+      @if (registerForm.errors?.['notMatching'] &&
+      registerForm.get('passwordConfirm')?.touched) {
+      <mat-error>Passwords do not match</mat-error>
+      }
     </mat-form-field>
 
     <button

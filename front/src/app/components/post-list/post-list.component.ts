@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { Post } from '../../../interfaces/Post';
+import { Post } from '../../interfaces/Post';
 import { PostsService } from '../../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';

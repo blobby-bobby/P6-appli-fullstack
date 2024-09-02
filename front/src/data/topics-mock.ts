@@ -1,4 +1,4 @@
-import { Topic } from '../interfaces/Topic';
+import { Topic } from '../app/interfaces/Topic';
 
 export const TOPICS: Topic[] = [
   {

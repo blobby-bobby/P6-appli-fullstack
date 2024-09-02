@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
-import { Topic } from '../../../interfaces/Topic';
+import { Topic } from '../../interfaces/Topic';
 import { TopicsService } from '../../services/topics.service';
 import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
 import { TopicCardComponent } from '../../components/topic-card/topic-card.component';

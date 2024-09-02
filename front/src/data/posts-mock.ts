@@ -1,4 +1,4 @@
-import { Post } from '../interfaces/Post';
+import { Post } from '../app/interfaces/Post';
 
 export const POSTS: Post[] = [
   {
