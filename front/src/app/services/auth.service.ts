@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   public me(): Observable<User> {
-    return this.httpClient.get<User>(`${baseUrl}/me`);
+    return this.httpClient.get<User>(`${baseUrl}/auth/me`);
   }
 
   logOut(): void {

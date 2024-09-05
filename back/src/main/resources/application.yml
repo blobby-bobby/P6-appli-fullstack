@@ -22,7 +22,7 @@ spring:
 #JWT Security
 mdd.api:
   lifespan: 9999 #jwt duration in minutes
-  secret: Arrt345eeeeeeeeeee123456713587655688766678
+  secret: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBB11111111111111111111111111111
   dev-url: ${server.servlet.context-path}/
   prod-url: test.com
   files-upload: files-upload

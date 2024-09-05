@@ -65,7 +65,7 @@ export class RegisterComponent {
   //--- FORM CONTROLS ---
   registerForm = new FormGroup(
     {
-      username: new FormControl('', [
+      name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
@@ -88,6 +88,7 @@ export class RegisterComponent {
     let temp = this.registerForm.value;
     delete temp.passwordConfirm;
     const registerRequest = temp as RegisterRequest;
+
     this.authService.register(registerRequest).subscribe({
       next: (response: AuthSuccess) => {
         localStorage.setItem('token', response.token);

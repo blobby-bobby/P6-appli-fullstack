@@ -11,13 +11,13 @@
         type="text"
         placeholder="Enter your username"
         value=""
-        formControlName="username"
+        formControlName="name"
       />
 
-      @if (registerForm.get('username')?.errors?.['minlength']) {
+      @if (registerForm.get('name')?.errors?.['minlength']) {
       <mat-error
         >Username must be at least
-        {{ registerForm.get('username')?.errors?.['minlength']?.requiredLength }}
+        {{ registerForm.get('name')?.errors?.['minlength']?.requiredLength }}
         characters long.</mat-error
       >
       }
