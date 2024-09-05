@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { RegisterRequest } from '../interfaces/RegisterRequest.interface';
 import { AuthSuccess } from '../interfaces/AuthSuccess.interface';
 import { User } from '../interfaces/User.interface';
+import { LoginRequest } from '../interfaces/LoginRequest.unterface';
 
 const baseUrl = 'http://localhost:3002/api';
 
@@ -13,8 +14,11 @@ const baseUrl = 'http://localhost:3002/api';
 export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
-  login(): void {
-    // TO DO
+  login(loginRequest: LoginRequest): Observable<AuthSuccess> {
+    return this.httpClient.post<AuthSuccess>(
+      `${baseUrl}/auth/login`,
+      loginRequest
+    );
   }
 
   register(registerRequest: RegisterRequest): Observable<AuthSuccess> {
