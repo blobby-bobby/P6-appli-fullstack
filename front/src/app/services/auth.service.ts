@@ -6,37 +6,37 @@ import { AuthSuccess } from '../interfaces/AuthSuccess.interface';
 import { User } from '../interfaces/User.interface';
 import { LoginRequest } from '../interfaces/LoginRequest.unterface';
 
-const baseUrl = 'http://localhost:3002/api';
-
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private baseUrl = 'http://localhost:3002/api';
+
   constructor(private httpClient: HttpClient) {}
 
   login(loginRequest: LoginRequest): Observable<AuthSuccess> {
     return this.httpClient.post<AuthSuccess>(
-      `${baseUrl}/auth/login`,
+      `${this.baseUrl}/auth/login`,
       loginRequest
     );
   }
 
   register(registerRequest: RegisterRequest): Observable<AuthSuccess> {
     return this.httpClient.post<AuthSuccess>(
-      `${baseUrl}/auth/register`,
+      `${this.baseUrl}/auth/register`,
       registerRequest
     );
   }
 
-  update(): void {
-    // TO DO
+  public update(registerRequest: RegisterRequest): Observable<AuthSuccess> {
+    console.log(registerRequest);
+    return this.httpClient.patch<AuthSuccess>(
+      `${this.baseUrl}/me`,
+      registerRequest
+    );
   }
 
   public me(): Observable<User> {
-    return this.httpClient.get<User>(`${baseUrl}/auth/me`);
-  }
-
-  logOut(): void {
-    // TO DO
+    return this.httpClient.get<User>(`${this.baseUrl}/auth/me`);
   }
 }
