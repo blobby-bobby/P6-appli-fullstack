@@ -3,3 +3,8 @@
 2024-09-05T10:07:56.280+02:00  INFO 6590 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
 2024-09-05T10:08:00.682+02:00  INFO 6590 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3002 (http) with context path '/api'
 2024-09-05T10:08:00.709+02:00  INFO 6590 --- [main] mdd.api.ApiApplication                   : Started ApiApplication in 8.864 seconds (process running for 10.082)
+2024-09-05T11:57:17.341+02:00  INFO 42403 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 42403 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
+2024-09-05T11:57:17.349+02:00  INFO 42403 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
+2024-09-05T11:57:20.323+02:00  INFO 42403 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
+2024-09-05T11:57:24.766+02:00  INFO 42403 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3002 (http) with context path '/api'
+2024-09-05T11:57:24.784+02:00  INFO 42403 --- [main] mdd.api.ApiApplication                   : Started ApiApplication in 8.947 seconds (process running for 9.844)
