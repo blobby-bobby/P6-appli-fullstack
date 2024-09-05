@@ -17,6 +17,7 @@ import { SessionService } from '../../services/session.service';
 import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
 import { User } from '../../interfaces/User.interface';
 import { NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -28,6 +29,7 @@ import { NgIf } from '@angular/common';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatIcon,
     NgIf,
   ],
   templateUrl: './login.component.html',

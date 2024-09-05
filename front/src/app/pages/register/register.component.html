@@ -37,7 +37,7 @@
       }
     </mat-form-field>
 
-    <mat-form-field class="form-field">
+    <mat-form-field class="form-field" fxFlex>
       <mat-label>Password</mat-label>
       <input
         matInput
@@ -46,13 +46,25 @@
         formControlName="password"
         value=""
       />
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="showPassword = !showPassword"
+        [attr.aria-label]="'Masquer'"
+        [attr.aria-pressed]="showPassword"
+      >
+        <mat-icon>{{
+          showPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
 
       @if (registerForm.get('password')?.errors?.['pattern']) {
       <mat-error>Password must be at least 8 characters long.</mat-error>
       }
     </mat-form-field>
 
-    <mat-form-field class="form-field">
+    <mat-form-field class="form-field" fxFlex>
       <mat-label>Confirm your password</mat-label>
       <input
         matInput
@@ -61,6 +73,20 @@
         formControlName="passwordConfirm"
         value=""
       />
+
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="showPassword = !showPassword"
+        [attr.aria-label]="'Masquer'"
+        [attr.aria-pressed]="showPassword"
+      >
+        <mat-icon>{{
+          showPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+
       @if (registerForm.errors?.['notMatching'] &&
       registerForm.get('passwordConfirm')?.touched) {
       <mat-error>Passwords do not match</mat-error>

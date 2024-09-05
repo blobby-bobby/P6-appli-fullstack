@@ -21,6 +21,7 @@ import { SessionService } from '../../services/session.service';
 import { RegisterRequest } from '../../interfaces/RegisterRequest.interface';
 import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
 import { User } from '../../interfaces/User.interface';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-register',
@@ -29,6 +30,7 @@ import { User } from '../../interfaces/User.interface';
     AuthLayoutComponent,
     MatFormFieldModule,
     MatButtonModule,
+    MatIcon,
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
