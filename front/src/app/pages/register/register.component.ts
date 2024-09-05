@@ -27,7 +27,6 @@ import { User } from '../../interfaces/User.interface';
   standalone: true,
   imports: [
     AuthLayoutComponent,
-    RouterLink,
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
@@ -44,7 +43,6 @@ export class RegisterComponent {
 
   constructor(
     private authService: AuthService,
-    private fb: FormBuilder,
     private router: Router,
     private sessionService: SessionService
   ) {}
