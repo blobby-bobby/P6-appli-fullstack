@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { Topic } from '../../interfaces/Topic';
+import { Topic } from '../../interfaces/Topic.interface';
 import { TopicsService } from '../../services/topics.service';
 import { NgFor, NgIf } from '@angular/common';
 import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
@@ -38,7 +38,7 @@ export class ProfileComponent {
   }
 
   getAllTopics() {
-    this.topics = this.topicsService.getAllTopics();
+    // this.topics = this.topicsService.getAllTopics();
   }
 
   ngOnInit(): void {

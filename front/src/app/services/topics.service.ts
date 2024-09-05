@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Topic } from '../interfaces/Topic';
-import { TOPICS } from '../../data/topics-mock';
+import { Topic } from '../interfaces/Topic.interface';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TopicsService {
-  constructor() {}
+  private baseUrl = 'http://localhost:3002/api/topic';
+  constructor(private httpClient: HttpClient) {}
 
-  getAllTopics(): Topic[] {
-    return TOPICS;
+  getAllTopics(): Observable<Topic[]> {
+    return this.httpClient.get<Topic[]>(this.baseUrl);
   }
 
   suscribeTopic(id: number): void {
