@@ -9,7 +9,9 @@ import { TopicsService } from '../../services/topics.service';
 import { NgFor, NgIf } from '@angular/common';
 import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
 import { TopicCardComponent } from '../../components/topic-card/topic-card.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +22,7 @@ import { RouterLink } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatIcon,
     NgFor,
     NgIf,
     GridLayoutComponent,
@@ -31,17 +34,29 @@ import { RouterLink } from '@angular/router';
 })
 export class ProfileComponent {
   topics: Topic[] = [];
-  topicsService: TopicsService;
 
-  constructor(topicsService: TopicsService) {
+  showPassword: boolean = false;
+
+  constructor(
+    private topicsService: TopicsService,
+    private sessionService: SessionService,
+    private router: Router
+  ) {
+    this.router = router;
     this.topicsService = topicsService;
+    this.sessionService = sessionService;
   }
 
-  getAllTopics() {
-    // this.topics = this.topicsService.getAllTopics();
-  }
+  // getAllTopics() {
+  // this.topics = this.topicsService.getAllTopics();
+  // }
 
-  ngOnInit(): void {
-    this.getAllTopics();
+  // ngOnInit(): void {
+  //   this.getAllTopics();
+  // }
+
+  logout(): void {
+    this.sessionService.logOut();
+    this.router.navigate(['/']);
   }
 }

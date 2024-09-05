@@ -1,7 +1,7 @@
 <app-nav-layout>
   <h1>Profil utilisateur</h1>
 
-  <div class="profile-update-form">
+  <form class="profile-update-form">
     <mat-form-field class="form-field">
       <mat-label>Username</mat-label>
       <input matInput type="text" placeholder="Username" value="" />
@@ -12,15 +12,33 @@
       <input matInput type="email" placeholder="Your email" value="" />
     </mat-form-field>
 
-    <mat-form-field class="form-field">
+    <mat-form-field class="form-field" fxFlex>
       <mat-label>Password</mat-label>
-      <input matInput type="password" placeholder="Your password" value="" />
+      <input
+        matInput
+        type="{{ showPassword ? 'password' : 'text' }}"
+        placeholder="Your password"
+        value=""
+      />
+
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="showPassword = !showPassword"
+        [attr.aria-label]="'Masquer'"
+        [attr.aria-pressed]="showPassword"
+      >
+        <mat-icon>{{
+          showPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
     </mat-form-field>
 
     <button mat-raised-button color="primary">Sauvegarder</button>
 
-    <button mat-button color="warn" routerLink="/">Se déconnecter</button>
-  </div>
+    <button mat-button color="warn" (click)="logout()">Se déconnecter</button>
+  </form>
   <hr />
   <h2>Abonnements</h2>
   <app-grid-layout *ngIf="topics" class="topics-list">
