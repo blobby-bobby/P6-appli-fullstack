@@ -15,11 +15,7 @@
       />
 
       @if (registerForm.get('name')?.errors?.['minlength']) {
-      <mat-error
-        >Username must be at least
-        {{ registerForm.get('name')?.errors?.['minlength']?.requiredLength }}
-        characters long.</mat-error
-      >
+      <mat-error>Username must be at least 4 characters long.</mat-error>
       }
     </mat-form-field>
 
@@ -45,18 +41,14 @@
       <mat-label>Password</mat-label>
       <input
         matInput
-        type="password"
+        type="{{ showPassword ? 'text' : 'password' }}"
         placeholder="Enter your password"
         formControlName="password"
         value=""
       />
 
       @if (registerForm.get('password')?.errors?.['pattern']) {
-      <mat-error
-        >Password must be at least
-        {{ registerForm.get('password')?.errors?.['pattern']?.requiredLength }}
-        characters long.</mat-error
-      >
+      <mat-error>Password must be at least 8 characters long.</mat-error>
       }
     </mat-form-field>
 
@@ -64,7 +56,7 @@
       <mat-label>Confirm your password</mat-label>
       <input
         matInput
-        type="password"
+        type="{{ showPassword ? 'text' : 'password' }}"
         placeholder="Confirm your password"
         formControlName="passwordConfirm"
         value=""
