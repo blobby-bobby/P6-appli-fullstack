@@ -30,8 +30,31 @@
       <mat-label>Password</mat-label>
       <input
         matInput
-        type="{{ showPassword ? 'password' : 'text' }}"
-        placeholder="Your password"
+        type="{{ showPassword ? 'text' : 'password' }}"
+        placeholder="Enter your new password"
+        formControlName="oldPassword"
+      />
+
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="showPassword = !showPassword"
+        [attr.aria-label]="'Masquer'"
+        [attr.aria-pressed]="showPassword"
+      >
+        <mat-icon>{{
+          showPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" fxFlex>
+      <mat-label>New Password confirmation</mat-label>
+      <input
+        matInput
+        type="{{ showPassword ? 'text' : 'password' }}"
+        placeholder="Confirm your new password"
         formControlName="password"
       />
 
@@ -49,7 +72,14 @@
       </button>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Sauvegarder</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!profileForm.valid"
+    >
+      Sauvegarder
+    </button>
 
     <button mat-button color="warn" (click)="logout()">Se déconnecter</button>
   </form>
@@ -60,7 +90,6 @@
       *ngFor="let topic of topics"
       [name]="topic.name"
       [description]="topic.description"
-      [hasSuscribed]="true"
     ></app-topic-card>
   </app-grid-layout>
 </app-nav-layout>

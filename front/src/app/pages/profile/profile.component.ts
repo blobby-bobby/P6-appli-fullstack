@@ -44,7 +44,7 @@ import { User } from '../../interfaces/User.interface';
 })
 export class ProfileComponent implements OnInit {
   public topics: Topic[] = [];
-  public showPassword: boolean = false;
+  public showPassword: boolean = true;
   public onErrorSubmit: boolean = false;
 
   constructor(
@@ -63,13 +63,14 @@ export class ProfileComponent implements OnInit {
 
   public profileForm = new FormGroup({
     name: new FormControl('', [
-      Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
     ]),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.email]),
+    oldPassword: new FormControl('', [
+      Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,60}$'),
+    ]),
     password: new FormControl('', [
-      Validators.required,
       Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,60}$'),
     ]),
   });
@@ -86,6 +87,7 @@ export class ProfileComponent implements OnInit {
           email: user.email,
           name: user.name,
           password: '',
+          oldPassword: '',
         });
       });
   }
@@ -96,6 +98,17 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // TO DO
+    // const updateProfileRequest = this.profileForm.value as RegisterRequest;
+    // this.authService.update(updateProfileRequest).subscribe({
+    //   next: (response: AuthSuccess) => {
+    //     localStorage.setItem('token', response.token);
+    //     this.authService.me().subscribe((user: User) => {
+    //       this.sessionService.logIn(user);
+    //     });
+    //   },
+    //   error: (_) => {
+    //     this.onErrorSubmit = true;
+    //   },
+    // });
   }
 }
