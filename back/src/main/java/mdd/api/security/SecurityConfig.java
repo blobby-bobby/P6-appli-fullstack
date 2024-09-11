@@ -78,7 +78,6 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
 
-        // return new CorsConfiguration().applyPermitDefaultValues
     }
 
     @Bean
