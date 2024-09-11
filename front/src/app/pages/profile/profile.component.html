@@ -25,14 +25,34 @@
         formControlName="email"
       />
     </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [type]="showPassword ? 'password' : 'text'"
+        placeholder="Votre mot de passe actuel"
+        formControlName="oldPassword"
+      />
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="showPassword = !showPassword"
+        [attr.aria-label]="'Masquer'"
+        [attr.aria-pressed]="showPassword"
+      >
+        <mat-icon>{{
+          showPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
 
     <mat-form-field class="form-field" fxFlex>
-      <mat-label>Password</mat-label>
+      <mat-label>New Password ?</mat-label>
       <input
         matInput
         type="{{ showPassword ? 'text' : 'password' }}"
         placeholder="Enter your new password"
-        formControlName="oldPassword"
+        formControlName="password"
       />
 
       <button
@@ -55,7 +75,7 @@
         matInput
         type="{{ showPassword ? 'text' : 'password' }}"
         placeholder="Confirm your new password"
-        formControlName="password"
+        formControlName="password2"
       />
 
       <button
@@ -77,6 +97,7 @@
       color="primary"
       type="submit"
       [disabled]="!profileForm.valid"
+      (click)="onSubmit()"
     >
       Sauvegarder
     </button>

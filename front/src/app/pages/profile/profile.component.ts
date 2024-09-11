@@ -21,6 +21,8 @@ import { SessionService } from '../../services/session.service';
 import { AuthService } from '../../services/auth.service';
 import { take } from 'rxjs';
 import { User } from '../../interfaces/User.interface';
+import { UpdateRequest } from '../../interfaces/UpdateRequest.interface';
+import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
 
 @Component({
   selector: 'app-profile',
@@ -44,7 +46,7 @@ import { User } from '../../interfaces/User.interface';
 })
 export class ProfileComponent implements OnInit {
   public topics: Topic[] = [];
-  public showPassword: boolean = true;
+  public showPassword: boolean = false;
   public onErrorSubmit: boolean = false;
 
   constructor(
@@ -68,9 +70,14 @@ export class ProfileComponent implements OnInit {
     ]),
     email: new FormControl('', [Validators.email]),
     oldPassword: new FormControl('', [
-      Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,60}$'),
+      Validators.required,
+      Validators.minLength(8),
+      Validators.maxLength(60),
     ]),
     password: new FormControl('', [
+      Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,60}$'),
+    ]),
+    password2: new FormControl('', [
       Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,60}$'),
     ]),
   });
@@ -80,14 +87,14 @@ export class ProfileComponent implements OnInit {
       .me()
       .pipe(take(1))
       .subscribe((user: User) => {
-        // this.user = user;
         // this.userSubscriptions = user.subscriptions;
 
         this.profileForm.setValue({
           email: user.email,
           name: user.name,
-          password: '',
           oldPassword: '',
+          password: '',
+          password2: '',
         });
       });
   }
@@ -98,17 +105,17 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // const updateProfileRequest = this.profileForm.value as RegisterRequest;
-    // this.authService.update(updateProfileRequest).subscribe({
-    //   next: (response: AuthSuccess) => {
-    //     localStorage.setItem('token', response.token);
-    //     this.authService.me().subscribe((user: User) => {
-    //       this.sessionService.logIn(user);
-    //     });
-    //   },
-    //   error: (_) => {
-    //     this.onErrorSubmit = true;
-    //   },
-    // });
+    const updateProfileRequest = this.profileForm.value as UpdateRequest;
+    this.authService.update(updateProfileRequest).subscribe({
+      next: (response: AuthSuccess) => {
+        localStorage.setItem('token', response.token);
+        this.authService.me().subscribe((user: User) => {
+          this.sessionService.logIn(user);
+        });
+      },
+      error: (_) => {
+        this.onErrorSubmit = true;
+      },
+    });
   }
 }
