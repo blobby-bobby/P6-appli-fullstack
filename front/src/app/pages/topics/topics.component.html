@@ -1,9 +1,19 @@
 <app-nav-layout>
-  <app-grid-layout *ngIf="topics" class="topics-list">
-    <app-topic-card
+  <app-grid-layout class="topics-list">
+    <!-- <app-topic-card
       *ngFor="let topic of topics"
       [name]="topic.name"
       [description]="topic.description"
-    ></app-topic-card>
+    ></app-topic-card> -->
+
+    <article class="topic-card" *ngFor="let topic of allTopics">
+      <h2>{{ topic.name }}</h2>
+
+      <p>{{ topic.description }}</p>
+
+      <button mat-raised-button color="primary" (click)="suscribeTopic(topic)">
+        S'abonner
+      </button>
+    </article>
   </app-grid-layout>
 </app-nav-layout>

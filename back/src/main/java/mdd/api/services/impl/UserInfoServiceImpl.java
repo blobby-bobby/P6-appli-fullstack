@@ -1,5 +1,6 @@
 package mdd.api.services.impl;
 
+import mdd.api.entities.Topic;
 import mdd.api.entities.UserInfo;
 import mdd.api.exceptionhandler.BadCredentialsException;
 import mdd.api.exceptionhandler.EntityNotFoundException;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.Set;
 
 import static mdd.api.security.SecurityConfig.passwordEncoder;
 
@@ -72,5 +74,12 @@ public class UserInfoServiceImpl implements UserInfoService {
         } else {
             throw new BadCredentialsException();
         }
+    }
+
+    @Override
+    public UserInfo updateSubscriptions(String username, Set<Topic> subscriptions) {
+        UserInfo userInfo = getUserByUsername(username);
+        userInfo.setSubscriptions(subscriptions);
+        return repository.save(userInfo);
     }
 }

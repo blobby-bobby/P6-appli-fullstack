@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -36,4 +38,12 @@ public class UserInfo {
 
     @NotNull
     private String roles;
+
+    @ManyToMany
+    @JoinTable(
+            name="subscriptions",
+            joinColumns = @JoinColumn(name="user_id"),
+            inverseJoinColumns = @JoinColumn(name="topic_id")
+    )
+    Set<Topic> subscriptions;
 }

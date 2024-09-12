@@ -1,11 +1,14 @@
 package mdd.api.services;
 
+import mdd.api.entities.Topic;
 import mdd.api.entities.UserInfo;
 import mdd.api.exceptionhandler.BadCredentialsException;
 import mdd.api.exceptionhandler.EntityNotFoundException;
 import mdd.api.requests.auth.ModifyUserRequest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+
+import java.util.Set;
 
 public interface UserInfoService extends UserDetailsService {
     @Override
@@ -18,4 +21,6 @@ public interface UserInfoService extends UserDetailsService {
     UserInfo getUserById(Long id) throws EntityNotFoundException;
 
     UserInfo modifyUser(String username, ModifyUserRequest request) throws BadCredentialsException;
+
+    UserInfo updateSubscriptions(String username, Set<Topic> subscriptions);
 }
