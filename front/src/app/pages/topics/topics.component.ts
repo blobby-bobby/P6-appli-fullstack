@@ -31,6 +31,7 @@ import { User } from '../../interfaces/User.interface';
 export class TopicsComponent implements OnInit {
   allTopics: Topic[] | null = [];
   userSubscriptions: Topic[] = [];
+  user: User | undefined;
 
   constructor(
     private topicsService: TopicsService,
@@ -38,39 +39,35 @@ export class TopicsComponent implements OnInit {
     private userService: UserService
   ) {}
 
-  hasSubscribed(topic: Topic): boolean {
-    return this.userSubscriptions.some((sub) => sub.id === topic.id);
+  hasSubscribed(topic: Topic): boolean | undefined {
+    return this.user?.subscriptions.some((sub) => sub.id === topic.id);
   }
 
-  getSubscriptions(): void {
-    if (this.user && this.user.id) {
-      this.userService
-        .getUserById(this.user.id)
-        .pipe(take(1))
-        .subscribe((user) => (this.userSubscriptions = user.subscriptions));
-    }
-  }
+  // getSubscriptions(): void {
+  //   if (this.user && this.user.id) {
+  //     this.userService
+  //       .getUserById(this.user.id)
+  //       .pipe(take(1))
+  //       .subscribe((user) => (this.userSubscriptions = user.subscriptions));
+  //   }
+  // }
 
   ngOnInit(): void {
     this.topicsService.getAllTopics().subscribe((topics) => {
       this.allTopics = topics;
     });
 
-    this.getSubscriptions();
-  }
-
-  get user(): User | undefined {
-    return this.sessionService.user;
+    this.user = this.sessionService.user;
   }
 
   subscribeToTopic(topic: Topic): void {
     this.topicsService.suscribeTopic(topic.id);
-    this.userSubscriptions.push(topic);
+    this.user?.subscriptions.push(topic);
   }
 
   unsubscribeFromTopic(topic: Topic): void {
     this.topicsService.unsuscribeTopic(topic.id);
-    this.userSubscriptions = this.userSubscriptions.filter(
+    this.user!.subscriptions = this.user!.subscriptions.filter(
       (sub) => sub.id !== topic.id
     );
   }
