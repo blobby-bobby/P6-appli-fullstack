@@ -43,15 +43,6 @@ export class TopicsComponent implements OnInit {
     return this.user?.subscriptions.some((sub) => sub.id === topic.id);
   }
 
-  // getSubscriptions(): void {
-  //   if (this.user && this.user.id) {
-  //     this.userService
-  //       .getUserById(this.user.id)
-  //       .pipe(take(1))
-  //       .subscribe((user) => (this.userSubscriptions = user.subscriptions));
-  //   }
-  // }
-
   ngOnInit(): void {
     this.topicsService.getAllTopics().subscribe((topics) => {
       this.allTopics = topics;
