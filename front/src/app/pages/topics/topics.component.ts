@@ -20,6 +20,7 @@ import { User } from '../../interfaces/User.interface';
     GridLayoutComponent,
     TopicCardComponent,
     NgFor,
+    NgIf,
     HttpClientModule,
     MatButtonModule,
   ],
@@ -37,12 +38,12 @@ export class TopicsComponent implements OnInit {
     private userService: UserService
   ) {}
 
-  ngOnInit(): void {
-    this.topicsService.getAllTopics().subscribe((topics) => {
-      this.allTopics = topics;
-    });
+  hasSubscribed(topic: Topic): boolean {
+    return this.userSubscriptions.some((sub) => sub.id === topic.id);
+  }
 
-    if (this.user) {
+  getSubscriptions(): void {
+    if (this.user && this.user.id) {
       this.userService
         .getUserById(this.user.id)
         .pipe(take(1))
@@ -50,12 +51,27 @@ export class TopicsComponent implements OnInit {
     }
   }
 
+  ngOnInit(): void {
+    this.topicsService.getAllTopics().subscribe((topics) => {
+      this.allTopics = topics;
+    });
+
+    this.getSubscriptions();
+  }
+
   get user(): User | undefined {
     return this.sessionService.user;
   }
 
-  suscribeTopic(topic: Topic): void {
+  subscribeToTopic(topic: Topic): void {
     this.topicsService.suscribeTopic(topic.id);
     this.userSubscriptions.push(topic);
+  }
+
+  unsubscribeFromTopic(topic: Topic): void {
+    this.topicsService.unsuscribeTopic(topic.id);
+    this.userSubscriptions = this.userSubscriptions.filter(
+      (sub) => sub.id !== topic.id
+    );
   }
 }

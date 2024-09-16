@@ -25,6 +25,9 @@ export class TopicsService {
   }
 
   unsuscribeTopic(id: number): void {
-    // TO DO
+    this.httpClient
+      .delete(`${this.baseUrl}/${id}/subscribe`, { responseType: 'text' })
+      .pipe(take(1))
+      .subscribe();
   }
 }

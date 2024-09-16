@@ -22,13 +22,12 @@ import java.util.Set;
 @RequestMapping("/topic")
 public class TopicController {
     private final TopicService topicService;
-     private final UserInfoService userInfoService;
-     private final JwtService jwtService;
+    private final UserInfoService userInfoService;
+    private final JwtService jwtService;
 
     public TopicController(
             TopicServiceImpl topicService,
-            @Qualifier("userInfoServiceImpl")
-            UserInfoServiceImpl userInfoService,
+            UserInfoService userInfoService,
             JwtService jwtService
             ) {
         this.topicService = topicService;
@@ -83,6 +82,39 @@ public class TopicController {
             return "Successfully subscribed";
         } else {
             return "User already subscribed to this topic";
+        }
+    }
+
+    @Operation(summary = "Unsubscribe the user to requested topic",responses={
+            @ApiResponse(responseCode="200", description = "Successfully subscribed to topic"),
+            @ApiResponse(responseCode="400", description = "Topic Id doesn't exist"),
+            @ApiResponse(responseCode="403", description = "Access unauthorized")
+    })
+    @DeleteMapping("/{id}/subscribe")
+    @Secured("ROLE_USER")
+    public String unsubscribeTopic(
+            @PathVariable("id") final long id,
+            @RequestHeader(value="Authorization",required=false) String jwt
+    ) throws EntityNotFoundException {
+        // Extract the username from the JWT
+        String username = jwtService.extractUsername(jwt.substring(7));
+
+        // Get the user's information
+        UserInfo user = userInfoService.getUserByUsername(username);
+
+        // Get the user subscriptions
+        Set<Topic> userSubscriptions = user.getSubscriptions();
+
+        // Get the topic by ID
+        Topic topicId = topicService.getTopicById(id);
+
+        if (userSubscriptions.remove(topicId)) {
+            // Update the user's information
+            userInfoService.updateSubscriptions(username, userSubscriptions);
+
+            return "Successfully unsubscribed";
+        } else {
+            return "User wasn't subscribed to this topic";
         }
     }
 }

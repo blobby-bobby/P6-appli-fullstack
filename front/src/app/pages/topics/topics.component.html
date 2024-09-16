@@ -1,18 +1,26 @@
 <app-nav-layout>
   <app-grid-layout class="topics-list">
-    <!-- <app-topic-card
-      *ngFor="let topic of topics"
-      [name]="topic.name"
-      [description]="topic.description"
-    ></app-topic-card> -->
-
     <article class="topic-card" *ngFor="let topic of allTopics">
       <h2>{{ topic.name }}</h2>
 
       <p>{{ topic.description }}</p>
 
-      <button mat-raised-button color="primary" (click)="suscribeTopic(topic)">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="subscribeToTopic(topic)"
+        *ngIf="!hasSubscribed(topic)"
+      >
         S'abonner
+      </button>
+
+      <button
+        mat-raised-button
+        color="warn"
+        *ngIf="hasSubscribed(topic)"
+        (click)="unsubscribeFromTopic(topic)"
+      >
+        Se désabonner
       </button>
     </article>
   </app-grid-layout>

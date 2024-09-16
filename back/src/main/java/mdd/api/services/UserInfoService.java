@@ -23,4 +23,5 @@ public interface UserInfoService extends UserDetailsService {
     UserInfo modifyUser(String username, ModifyUserRequest request) throws BadCredentialsException;
 
     UserInfo updateSubscriptions(String username, Set<Topic> subscriptions);
+
 }

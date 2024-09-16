@@ -10,4 +10,6 @@ public interface TopicService {
     Topic getTopicById(final Long id) throws EntityNotFoundException;
 
     List<Topic> getAllTopics();
+
+    
 }

@@ -1,6 +1,8 @@
 package mdd.api.controllers;
 
 import mdd.api.dto.UserDto;
+import mdd.api.entities.Topic;
+import mdd.api.entities.UserInfo;
 import mdd.api.exceptionhandler.EntityNotFoundException;
 import mdd.api.services.UserInfoService;
 import mdd.api.mappers.UserMapper;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
 
 @RestController
 @RequestMapping("/user")
