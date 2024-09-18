@@ -6,6 +6,9 @@ import { MatInput } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { TopicsService } from '../../services/topics.service';
+import { Topic } from '../../interfaces/Topic.interface';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-new-post',
@@ -23,11 +26,20 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './new-post.component.css',
 })
 export class NewPostComponent {
-  topicOptions: { value: string; viewValue: string }[] = [
-    { value: 'sport', viewValue: 'Sport' },
-    { value: 'culture', viewValue: 'Culture' },
-    { value: 'economie', viewValue: 'Economie' },
-    { value: 'technologie', viewValue: 'Technologie' },
-    { value: 'politique', viewValue: 'Politique' },
-  ];
+  topicOptions: { value: string; viewValue: string }[] = [];
+
+  constructor(private topicsService: TopicsService) {
+    this.getTopicNames().subscribe((names: string[]) => {
+      this.topicOptions = names.map((name: string) => ({
+        value: name,
+        viewValue: name,
+      }));
+    });
+  }
+
+  getTopicNames(): Observable<string[]> {
+    return this.topicsService
+      .getAllTopics()
+      .pipe(map((topics: Topic[]) => topics.map((topic: Topic) => topic.name)));
+  }
 }
