@@ -106,11 +106,5 @@
   </form>
   <hr />
   <h2>Abonnements</h2>
-  <app-grid-layout *ngIf="topics" class="topics-list">
-    <app-topic-card
-      *ngFor="let topic of topics"
-      [name]="topic.name"
-      [description]="topic.description"
-    ></app-topic-card>
-  </app-grid-layout>
+  <app-topic-list></app-topic-list>
 </app-nav-layout>

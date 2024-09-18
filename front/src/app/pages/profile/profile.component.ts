@@ -23,6 +23,7 @@ import { take } from 'rxjs';
 import { User } from '../../interfaces/User.interface';
 import { UpdateRequest } from '../../interfaces/UpdateRequest.interface';
 import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
+import { TopicListComponent } from '../../components/topic-list/topic-list.component';
 
 @Component({
   selector: 'app-profile',
@@ -40,6 +41,7 @@ import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
     TopicCardComponent,
     ReactiveFormsModule,
     RouterLink,
+    TopicListComponent,
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
