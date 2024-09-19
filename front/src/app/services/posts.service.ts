@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Post } from '../interfaces/Post';
+import { Post } from '../interfaces/Post.interface';
 import { POSTS } from '../../data/posts-mock';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostsService {
-  constructor() {}
+  private baseUrl = 'http://localhost:3002/api/auth';
+
+  constructor(private httpClient: HttpClient) {}
 
   getAllPosts(): Post[] {
     // TO DO with an API
@@ -18,9 +21,11 @@ export class PostsService {
     return POSTS.find((post) => post.id === id);
   }
 
-  createPost(post: Post): void {
-    // TO DO with an API
-    POSTS.push(post);
+  createPost(post: Post, topic_id: number) {
+    return this.httpClient.post<{ message: string }>(
+      `${this.baseUrl}/topic/${topic_id}/post`,
+      post
+    );
   }
 
   getComments(id: number): void {
