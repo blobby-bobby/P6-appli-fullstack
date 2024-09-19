@@ -1,62 +1,10 @@
-2024-09-18T12:52:56.657+02:00  INFO 7460 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 7460 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
-2024-09-18T12:52:56.680+02:00  INFO 7460 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
-2024-09-18T12:52:59.477+02:00  INFO 7460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
-2024-09-18T12:53:04.057+02:00  INFO 7460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3002 (http) with context path '/api'
-2024-09-18T12:53:04.073+02:00  INFO 7460 --- [main] mdd.api.ApiApplication                   : Started ApiApplication in 8.744 seconds (process running for 10.078)
-2024-09-18T19:32:55.731+02:00  INFO 11515 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 11515 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
-2024-09-18T19:32:55.734+02:00  INFO 11515 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
-2024-09-18T19:32:58.541+02:00  INFO 11515 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
-2024-09-18T19:33:01.919+02:00 ERROR 11515 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 2 of constructor in mdd.api.controllers.PostController required a single bean, but 2 were found:
-	- userInfoServiceImpl: defined in file [/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes/mdd/api/services/impl/UserInfoServiceImpl.class]
-	- userDetailsService: defined by method 'userDetailsService' in class path resource [mdd/api/security/SecurityConfig.class]
-
-This may be due to missing parameter name information
-
-Action:
-
-Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
-
-Ensure that your compiler is configured to use the '-parameters' flag.
-You may need to update both your build tool settings as well as your IDE.
-(See https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention)
-
-
-2024-09-18T19:33:41.666+02:00  INFO 11816 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 11816 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
-2024-09-18T19:33:41.671+02:00  INFO 11816 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
-2024-09-18T19:33:44.426+02:00  INFO 11816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
-2024-09-18T19:33:47.598+02:00 ERROR 11816 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field userInfoService in mdd.api.mappers.PostMapper required a single bean, but 2 were found:
-	- userInfoServiceImpl: defined in file [/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes/mdd/api/services/impl/UserInfoServiceImpl.class]
-	- userDetailsService: defined by method 'userDetailsService' in class path resource [mdd/api/security/SecurityConfig.class]
-
-This may be due to missing parameter name information
-
-Action:
-
-Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
-
-Ensure that your compiler is configured to use the '-parameters' flag.
-You may need to update both your build tool settings as well as your IDE.
-(See https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention)
-
-
-2024-09-18T19:34:38.101+02:00  INFO 12203 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 12203 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
-2024-09-18T19:34:38.112+02:00  INFO 12203 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
-2024-09-18T19:34:40.778+02:00  INFO 12203 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
-2024-09-18T19:34:44.935+02:00  INFO 12203 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3002 (http) with context path '/api'
-2024-09-18T19:34:44.951+02:00  INFO 12203 --- [main] mdd.api.ApiApplication                   : Started ApiApplication in 7.947 seconds (process running for 8.992)
+2024-09-19T10:54:24.708+02:00  INFO 8357 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 8357 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
+2024-09-19T10:54:24.745+02:00  INFO 8357 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
+2024-09-19T10:54:28.341+02:00  INFO 8357 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
+2024-09-19T10:54:33.594+02:00  INFO 8357 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3002 (http) with context path '/api'
+2024-09-19T10:54:33.614+02:00  INFO 8357 --- [main] mdd.api.ApiApplication                   : Started ApiApplication in 10.196 seconds (process running for 11.556)
+2024-09-19T12:31:47.829+02:00  INFO 41605 --- [main] mdd.api.ApiApplication                   : Starting ApiApplication using Java 21.0.2 with PID 41605 (/home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back/target/classes started by bulle in /home/bulle/Bureau/oc-dev-fs-angular-java/P6-fullstack-dev-app/Developpez-une-application-full-stack-complete/back)
+2024-09-19T12:31:47.834+02:00  INFO 41605 --- [main] mdd.api.ApiApplication                   : No active profile set, falling back to 1 default profile: "default"
+2024-09-19T12:31:50.862+02:00  INFO 41605 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3002 (http)
+2024-09-19T12:31:55.321+02:00  INFO 41605 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3002 (http) with context path '/api'
+2024-09-19T12:31:55.338+02:00  INFO 41605 --- [main] mdd.api.ApiApplication                   : Started ApiApplication in 8.61 seconds (process running for 9.476)

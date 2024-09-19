@@ -6,5 +6,5 @@ export interface Post {
   author_name: string;
   topic_id: number;
   topic_name: string;
-  createdAt: Date;
+  createdAt: string;
 }

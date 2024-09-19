@@ -10,11 +10,9 @@
     <mat-form-field>
       <mat-label>Sélectionner un thème</mat-label>
       <mat-select formControlName="topic">
-        @for (topicOption of topicOptions; track topicOption) {
-        <mat-option [value]="topicOption.value">{{
-          topicOption.viewValue
-        }}</mat-option>
-        }
+        <mat-option *ngFor="let topic of allTopics" [value]="topic.id">
+          {{ topic.name }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -38,6 +36,13 @@
       ></textarea>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Créer</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="newPostForm.invalid"
+    >
+      Créer
+    </button>
   </form>
 </app-nav-layout>

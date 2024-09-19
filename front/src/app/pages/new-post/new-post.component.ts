@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
 import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow/navigate-back-arrow.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,7 +14,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { TopicsService } from '../../services/topics.service';
 import { Topic } from '../../interfaces/Topic.interface';
-import { map, Observable } from 'rxjs';
+import { map, Observable, take } from 'rxjs';
+import { PostsService } from '../../services/posts.service';
+import { Post } from '../../interfaces/Post.interface';
+import { Router } from '@angular/router';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-new-post',
@@ -28,19 +32,23 @@ import { map, Observable } from 'rxjs';
     MatInput,
     MatSelectModule,
     MatButtonModule,
+    NgFor,
   ],
   templateUrl: './new-post.component.html',
   styleUrl: './new-post.component.css',
 })
-export class NewPostComponent {
-  topicOptions: { value: string; viewValue: string }[] = [];
+export class NewPostComponent implements OnInit {
+  allTopics: Topic[] | null = [];
 
-  constructor(private topicsService: TopicsService) {
-    this.getTopicNames().subscribe((names: string[]) => {
-      this.topicOptions = names.map((name: string) => ({
-        value: name,
-        viewValue: name,
-      }));
+  constructor(
+    private topicsService: TopicsService,
+    private postService: PostsService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.topicsService.getAllTopics().subscribe((topics) => {
+      this.allTopics = topics;
     });
   }
 
@@ -56,7 +64,14 @@ export class NewPostComponent {
       .pipe(map((topics: Topic[]) => topics.map((topic: Topic) => topic.name)));
   }
 
-  onSubmit() {
-    // TODO
+  public onSubmit(): void {
+    const postSubmit = this.newPostForm.value as Post;
+
+    if (this.newPostForm.value.topic) {
+      this.postService
+        .createPost(postSubmit, this.newPostForm.value.topic)
+        .pipe(take(1))
+        .subscribe(() => this.router.navigate(['posts']));
+    }
   }
 }

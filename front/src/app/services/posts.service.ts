@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/Post.interface';
 import { POSTS } from '../../data/posts-mock';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostsService {
-  private baseUrl = 'http://localhost:3002/api/auth';
+  private baseUrl = 'http://localhost:3002/api';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -21,9 +22,9 @@ export class PostsService {
     return POSTS.find((post) => post.id === id);
   }
 
-  createPost(post: Post, topic_id: number) {
+  createPost(post: Post, topic: string): Observable<{ message: string }> {
     return this.httpClient.post<{ message: string }>(
-      `${this.baseUrl}/topic/${topic_id}/post`,
+      `${this.baseUrl}/topic/${topic}/post`,
       post
     );
   }
