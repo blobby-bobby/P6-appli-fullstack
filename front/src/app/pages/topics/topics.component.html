@@ -1,3 +1,8 @@
 <app-nav-layout>
-  <app-topic-list></app-topic-list>
+  <app-grid-layout class="topics-list">
+    <app-topic-card
+      [topic]="topic"
+      *ngFor="let topic of allTopics"
+    ></app-topic-card>
+  </app-grid-layout>
 </app-nav-layout>

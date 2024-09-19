@@ -106,5 +106,11 @@
   </form>
   <hr />
   <h2>Abonnements</h2>
-  <app-topic-list></app-topic-list>
+
+  <app-grid-layout class="subscriptions-list">
+    <app-topic-card
+      [topic]="topic"
+      *ngFor="let topic of userSubscriptions"
+    ></app-topic-card>
+  </app-grid-layout>
 </app-nav-layout>

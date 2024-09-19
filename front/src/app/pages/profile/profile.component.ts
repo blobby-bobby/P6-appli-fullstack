@@ -11,7 +11,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Topic } from '../../interfaces/Topic.interface';
-import { TopicsService } from '../../services/topics.service';
 import { NgFor, NgIf } from '@angular/common';
 import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
 import { TopicCardComponent } from '../../components/topic-card/topic-card.component';
@@ -23,7 +22,6 @@ import { take } from 'rxjs';
 import { User } from '../../interfaces/User.interface';
 import { UpdateRequest } from '../../interfaces/UpdateRequest.interface';
 import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
-import { TopicListComponent } from '../../components/topic-list/topic-list.component';
 
 @Component({
   selector: 'app-profile',
@@ -41,7 +39,6 @@ import { TopicListComponent } from '../../components/topic-list/topic-list.compo
     TopicCardComponent,
     ReactiveFormsModule,
     RouterLink,
-    TopicListComponent,
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
@@ -50,15 +47,14 @@ export class ProfileComponent implements OnInit {
   public topics: Topic[] = [];
   public showPassword: boolean = false;
   public onErrorSubmit: boolean = false;
+  userSubscriptions: Topic[] = [];
 
   constructor(
-    // private topicsService: TopicsService,
     private sessionService: SessionService,
     private authService: AuthService,
     private router: Router
   ) {
     this.router = router;
-    // this.topicsService = topicsService;
     this.sessionService = sessionService;
     this.authService = authService;
   }
@@ -89,7 +85,7 @@ export class ProfileComponent implements OnInit {
       .me()
       .pipe(take(1))
       .subscribe((user: User) => {
-        // this.userSubscriptions = user.subscriptions;
+        this.userSubscriptions = user.subscriptions;
 
         this.profileForm.setValue({
           email: user.email,
