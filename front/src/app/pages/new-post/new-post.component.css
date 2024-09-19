@@ -24,4 +24,8 @@ form {
     display: block;
     margin: auto;
   }
+
+  textarea {
+    resize: vertical;
+  }
 }

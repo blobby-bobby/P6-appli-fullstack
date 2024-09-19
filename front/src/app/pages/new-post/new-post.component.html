@@ -6,10 +6,10 @@
     <h1>Créer un nouvel article</h1>
   </div>
 
-  <form>
-    <mat-form-field class="example-full-width">
+  <form class="new-post-form" [formGroup]="newPostForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
       <mat-label>Sélectionner un thème</mat-label>
-      <mat-select>
+      <mat-select formControlName="topic">
         @for (topicOption of topicOptions; track topicOption) {
         <mat-option [value]="topicOption.value">{{
           topicOption.viewValue
@@ -18,14 +18,24 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Titre de l'article</mat-label>
-      <input matInput placeholder="Titre de l'article" />
+      <input
+        matInput
+        placeholder="Titre de l'article"
+        formControlName="title"
+        maxlength="100"
+      />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Contenu de l'article</mat-label>
-      <textarea matInput placeholder="Contenu de l'article"></textarea>
+      <textarea
+        matInput
+        placeholder="Contenu de l'article"
+        maxlength="500"
+        formControlName="content"
+      ></textarea>
     </mat-form-field>
 
     <button mat-raised-button color="primary">Créer</button>

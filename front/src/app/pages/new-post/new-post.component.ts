@@ -3,7 +3,13 @@ import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.componen
 import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow/navigate-back-arrow.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { TopicsService } from '../../services/topics.service';
@@ -18,6 +24,7 @@ import { map, Observable } from 'rxjs';
     NavigateBackArrowComponent,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInput,
     MatSelectModule,
     MatButtonModule,
@@ -37,9 +44,19 @@ export class NewPostComponent {
     });
   }
 
+  public newPostForm = new FormGroup({
+    topic: new FormControl('', [Validators.required]),
+    title: new FormControl('', [Validators.required]),
+    content: new FormControl('', [Validators.required]),
+  });
+
   getTopicNames(): Observable<string[]> {
     return this.topicsService
       .getAllTopics()
       .pipe(map((topics: Topic[]) => topics.map((topic: Topic) => topic.name)));
+  }
+
+  onSubmit() {
+    // TODO
   }
 }
