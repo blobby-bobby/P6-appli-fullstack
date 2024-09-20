@@ -40,7 +40,7 @@ export class LoginComponent {
   public onErrorSubmit: boolean = false;
 
   constructor(
-    private AuthService: AuthService,
+    private authService: AuthService,
     private router: Router,
     private sessionService: SessionService
   ) {}
@@ -59,10 +59,11 @@ export class LoginComponent {
     let temp = this.loginForm.value;
     const loginRequest = temp as LoginRequest;
 
-    this.AuthService.login(loginRequest).subscribe({
+    this.authService.login(loginRequest).subscribe({
       next: (response: AuthSuccess) => {
         localStorage.setItem('token', response.token);
-        this.AuthService.me().subscribe((user: User) => {
+        this.authService.me().subscribe((user: User) => {
+          console.log(user);
           this.sessionService.logIn(user);
           this.router.navigate(['/posts']);
         });
