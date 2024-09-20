@@ -28,7 +28,6 @@ import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow
 })
 export class PostDetailComponent implements OnInit {
   post!: Post;
-  postId!: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,9 +35,9 @@ export class PostDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.postId = this.route.snapshot.paramMap.get('id')!;
-    this.postsService.getPostDetail(Number(this.postId)).subscribe((post) => {
-      this.post = post;
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.postsService.getPostDetail(id).subscribe({
+      next: (post) => (this.post = post),
     });
   }
 }

@@ -42,7 +42,7 @@ public class PostController {
             @ApiResponse(responseCode="400", description = "Post's Id doesn't exist"),
             @ApiResponse(responseCode="403", description = "Access unauthorized")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/posts/{id}")
     @Secured("ROLE_USER")
     public PostDto getPostById(@PathVariable("id") final long id) throws EntityNotFoundException {
         return postMapper.toDto(postService.getPostById(id));
