@@ -85,7 +85,6 @@ public class AuthController {
     @GetMapping("/me")
     @Secured("ROLE_USER")
     public UserDto userProfile(@RequestHeader(value="Authorization",required=false) String jwt) {
-        // FIXME : on refresh ?
         return userMapper.toDto(service.getUserByUsername(jwtService.extractUsername(jwt.substring(7))));
     }
 

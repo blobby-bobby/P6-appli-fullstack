@@ -3,7 +3,6 @@ package mdd.api.controllers;
 import mdd.api.dto.PostDto;
 import mdd.api.dto.UserDto;
 import mdd.api.entities.Topic;
-import mdd.api.entities.UserInfo;
 import mdd.api.exceptionhandler.EntityNotFoundException;
 import mdd.api.mappers.PostMapper;
 import mdd.api.services.PostService;
@@ -20,8 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")

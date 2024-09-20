@@ -6,6 +6,8 @@ import mdd.api.repositories.CommentRepository;
 import mdd.api.services.CommentService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CommentServiceImpl implements CommentService {
 
@@ -18,5 +20,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public void createComment(Comment comment) throws EntityNotFoundException {
         commentRepository.save(comment);
+    }
+
+    @Override
+    public List<Comment> getCommentsForPost(final Long id) {
+        return commentRepository.findByPostId(id);
     }
 }
