@@ -12,14 +12,12 @@ export class PostsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllPosts(): Post[] {
-    // TO DO with an API
-    return POSTS;
+  getAllPosts(userId: number): Observable<Post[]> {
+    return this.httpClient.get<Post[]>(`${this.baseUrl}/user/${userId}/posts`);
   }
 
-  getPostById(id: number): Post | undefined {
-    // TO DO with an API
-    return POSTS.find((post) => post.id === id);
+  getPostById(postId: number): Observable<Post> {
+    return this.httpClient.get<Post>(`${this.baseUrl}/post/${postId}`);
   }
 
   createPost(post: Post, topic: string): Observable<{ message: string }> {

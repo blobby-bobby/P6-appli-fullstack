@@ -1,20 +1,25 @@
 package mdd.api.services.impl;
 
 import mdd.api.entities.Post;
+import mdd.api.entities.Topic;
 import mdd.api.exceptionhandler.EntityNotFoundException;
 import mdd.api.repositories.PostRepository;
+import mdd.api.repositories.TopicRepository;
 import mdd.api.services.PostService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
+    private final TopicRepository topicRepository;
 
-    public PostServiceImpl(PostRepository postRepository) {
+    public PostServiceImpl(PostRepository postRepository, TopicRepository topicRepository) {
         this.postRepository = postRepository;
+        this.topicRepository = topicRepository;
     }
 
     @Override
@@ -24,20 +29,16 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> getPostsByTopicId(final Long id) throws EntityNotFoundException {
-        // TODO;
-        return null;
-    }
+    public List<Post> getPostsByTopics(final List<Topic> topics) {
+        List<Post> posts = postRepository.findAll().stream()
+                .filter(post -> topics.contains(post.getTopic()))
+                .toList();
 
-    @Override
-    public List<Post> getPostsByTopicIds(final List<Long> ids) {
-        // TODO;
-        return null;
+        return posts;
     };
 
     @Override
     public Post createPost(Post post) {
-        // TODO
         return postRepository.save(post);
     };
 }

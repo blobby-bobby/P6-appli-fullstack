@@ -35,9 +35,9 @@ export class PostDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const postId = Number(params.get('id'));
-      this.post = this.postsService.getPostById(postId);
-    });
+    // this.route.paramMap.subscribe((params) => {
+    //   const postId = Number(params.get('id'));
+    //   this.post = this.postsService.getPostById(postId);
+    // });
   }
 }
