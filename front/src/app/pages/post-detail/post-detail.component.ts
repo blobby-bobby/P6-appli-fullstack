@@ -27,7 +27,8 @@ import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow
   styleUrl: './post-detail.component.css',
 })
 export class PostDetailComponent implements OnInit {
-  post: Post | undefined;
+  post!: Post;
+  postId!: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,9 +36,9 @@ export class PostDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.route.paramMap.subscribe((params) => {
-    //   const postId = Number(params.get('id'));
-    //   this.post = this.postsService.getPostById(postId);
-    // });
+    this.postId = this.route.snapshot.paramMap.get('id')!;
+    this.postsService.getPostDetail(Number(this.postId)).subscribe((post) => {
+      this.post = post;
+    });
   }
 }

@@ -15,11 +15,9 @@ import java.util.stream.Collectors;
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
-    private final TopicRepository topicRepository;
 
-    public PostServiceImpl(PostRepository postRepository, TopicRepository topicRepository) {
+    public PostServiceImpl(PostRepository postRepository) {
         this.postRepository = postRepository;
-        this.topicRepository = topicRepository;
     }
 
     @Override

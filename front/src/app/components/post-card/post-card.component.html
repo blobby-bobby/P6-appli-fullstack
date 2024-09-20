@@ -1,4 +1,4 @@
-<article>
+<article [routerLink]="['/posts', post.id]">
   <h2>{{ post.title }}</h2>
   <div class="post-info">
     <time>{{ post.createdAt }}</time> <cite>{{ post.author_name }}</cite>

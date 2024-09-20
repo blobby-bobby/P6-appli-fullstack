@@ -16,8 +16,8 @@ export class PostsService {
     return this.httpClient.get<Post[]>(`${this.baseUrl}/user/${userId}/posts`);
   }
 
-  getPostById(postId: number): Observable<Post> {
-    return this.httpClient.get<Post>(`${this.baseUrl}/post/${postId}`);
+  getPostDetail(postId: number): Observable<Post> {
+    return this.httpClient.get<Post>(`${this.baseUrl}/posts/${postId}`);
   }
 
   createPost(post: Post, topic: string): Observable<{ message: string }> {

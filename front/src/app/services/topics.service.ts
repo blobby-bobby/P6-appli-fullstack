@@ -15,19 +15,15 @@ export class TopicsService {
     return this.httpClient.get<Topic[]>(this.baseUrl);
   }
 
-  suscribeTopic(id: number): void {
-    this.httpClient
-      .post(`${this.baseUrl}/${id}/subscribe`, {
-        responseType: 'text',
-      })
-      .pipe(take(1))
-      .subscribe();
+  subscribeTopic(id: number) {
+    return this.httpClient.post(`${this.baseUrl}/${id}/subscribe`, null, {
+      responseType: 'text',
+    });
   }
 
-  unsuscribeTopic(id: number): void {
-    this.httpClient
-      .delete(`${this.baseUrl}/${id}/subscribe`, { responseType: 'text' })
-      .pipe(take(1))
-      .subscribe();
+  unsubscribeTopic(id: number) {
+    return this.httpClient.delete(`${this.baseUrl}/${id}/subscribe`, {
+      responseType: 'text',
+    });
   }
 }
