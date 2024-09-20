@@ -25,23 +25,24 @@
         formControlName="email"
       />
     </mat-form-field>
+
     <mat-form-field>
       <input
         matInput
-        [type]="showPassword ? 'password' : 'text'"
-        placeholder="Votre mot de passe actuel"
+        [type]="showOldPassword ? 'password' : 'text'"
+        placeholder="Your current password"
         formControlName="oldPassword"
       />
       <button
         type="button"
         mat-icon-button
         matSuffix
-        (click)="showPassword = !showPassword"
+        (click)="showOldPassword = !showOldPassword"
         [attr.aria-label]="'Masquer'"
-        [attr.aria-pressed]="showPassword"
+        [attr.aria-pressed]="showOldPassword"
       >
         <mat-icon>{{
-          showPassword ? "visibility_off" : "visibility"
+          showOldPassword ? "visibility_off" : "visibility"
         }}</mat-icon>
       </button>
     </mat-form-field>
@@ -73,7 +74,7 @@
       <mat-label>New Password confirmation</mat-label>
       <input
         matInput
-        type="{{ showPassword ? 'text' : 'password' }}"
+        type="{{ showPasswordConfirmation ? 'text' : 'password' }}"
         placeholder="Confirm your new password"
         formControlName="password2"
       />
@@ -82,9 +83,9 @@
         type="button"
         mat-icon-button
         matSuffix
-        (click)="showPassword = !showPassword"
+        (click)="showPasswordConfirmation = !showPasswordConfirmation"
         [attr.aria-label]="'Masquer'"
-        [attr.aria-pressed]="showPassword"
+        [attr.aria-pressed]="showPasswordConfirmation"
       >
         <mat-icon>{{
           showPassword ? "visibility_off" : "visibility"

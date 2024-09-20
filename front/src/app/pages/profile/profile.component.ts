@@ -45,7 +45,9 @@ import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
 })
 export class ProfileComponent implements OnInit {
   public topics: Topic[] = [];
+  public showOldPassword: boolean = false;
   public showPassword: boolean = false;
+  public showPasswordConfirmation: boolean = false;
   public onErrorSubmit: boolean = false;
   userSubscriptions: Topic[] = [];
 
@@ -109,6 +111,11 @@ export class ProfileComponent implements OnInit {
         localStorage.setItem('token', response.token);
         this.authService.me().subscribe((user: User) => {
           this.sessionService.logIn(user);
+        });
+        this.profileForm.patchValue({
+          oldPassword: '',
+          password: '',
+          password2: '',
         });
       },
       error: (_) => {
