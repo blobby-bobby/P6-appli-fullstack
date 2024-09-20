@@ -5,7 +5,7 @@
   </div>
   <section class="post">
     <div class="post-info">
-      <time>{{ post.createdAt }}</time>
+      <time>{{ post.createdAt | date : "MMMM d, y, h:mm a" }}</time>
       <cite>{{ post.author_name }}</cite>
       <div class="topics">
         <span>{{ post.topic_name }}</span>

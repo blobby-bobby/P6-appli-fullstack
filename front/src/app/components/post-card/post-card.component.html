@@ -1,7 +1,8 @@
-<article [routerLink]="['/posts', post.id]">
+<article [routerLink]="['/posts', post.id]" class="post-card">
   <h2>{{ post.title }}</h2>
   <div class="post-info">
-    <time>{{ post.createdAt }}</time> <cite>{{ post.author_name }}</cite>
+    <time>{{ post.createdAt | date : "MMMM d, y, h:mm a" }}</time>
+    <cite>{{ post.author_name }}</cite>
   </div>
-  <p>{{ post.content }}</p>
+  <p class="post-content">{{ post.content }}</p>
 </article>
