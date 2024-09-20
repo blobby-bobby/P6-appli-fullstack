@@ -71,7 +71,7 @@ export class NewPostComponent implements OnInit {
       this.postService
         .createPost(postSubmit, this.newPostForm.value.topic)
         .pipe(take(1))
-        .subscribe(() => this.router.navigate(['posts']));
+        .subscribe(() => this.router.navigate(['feed']));
     }
   }
 }

@@ -65,7 +65,7 @@ export class LoginComponent {
         this.authService.me().subscribe((user: User) => {
           console.log(user);
           this.sessionService.logIn(user);
-          this.router.navigate(['/posts']);
+          this.router.navigate(['/feed']);
         });
       },
       error: () => {
