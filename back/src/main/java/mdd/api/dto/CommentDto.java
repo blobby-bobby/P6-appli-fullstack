@@ -13,24 +13,19 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PostDto {
-
+public class CommentDto {
     private Long id;
 
     @NotNull
-    @Size(max = 100)
-    private String title;
-
-    @NotNull
-    @Size(max = 550)
+    @Size(max=500)
     private String content;
 
+    @NotNull
     private Long author_id;
     private String author_name;
 
-    private Long topic_id;
-    private String topic_name;
+    @NotNull
+    private Long post_id;
 
     private LocalDateTime createdAt;
-
 }
