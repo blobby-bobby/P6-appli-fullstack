@@ -44,7 +44,6 @@ export class PostDetailComponent implements OnInit {
   commentForm = new FormGroup({
     message: new FormControl('', [
       Validators.required,
-      Validators.minLength(10),
       Validators.maxLength(500),
     ]),
   });
@@ -76,6 +75,9 @@ export class PostDetailComponent implements OnInit {
       .createComment(this.post.id, commentRequest.message)
       .subscribe({
         next: (comment) => {
+          this.postsService.getComments(this.post.id).subscribe({
+            next: (comments: MessageDto[]) => (this.comments = comments),
+          });
           this.commentForm.reset();
         },
       });
