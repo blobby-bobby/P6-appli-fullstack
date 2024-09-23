@@ -25,6 +25,7 @@ import java.util.Map;
 
 
 @RestController
+@RequestMapping("/posts")
 public class PostController {
     private final PostService postService;
     private final UserInfoService userInfoService;
@@ -54,7 +55,7 @@ public class PostController {
             @ApiResponse(responseCode="400", description = "Post's Id doesn't exist"),
             @ApiResponse(responseCode="403", description = "Access unauthorized")
     })
-    @GetMapping("/posts/{id}")
+    @GetMapping("/{id}")
     @Secured("ROLE_USER")
     public PostDto getPostById(@PathVariable("id") final long id) throws EntityNotFoundException {
         return postMapper.toDto(postService.getPostById(id));

@@ -63,7 +63,6 @@ export class LoginComponent {
       next: (response: AuthSuccess) => {
         localStorage.setItem('token', response.token);
         this.authService.me().subscribe((user: User) => {
-          console.log(user);
           this.sessionService.logIn(user);
           this.router.navigate(['/feed']);
         });

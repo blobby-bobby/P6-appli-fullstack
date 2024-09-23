@@ -9,6 +9,14 @@ import { MatInput } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow/navigate-back-arrow.component';
+import { CommentsService } from '../../services/comments.service';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { MessageDto } from '../../interfaces/MessageDto.interface';
 
 @Component({
   selector: 'app-post-detail',
@@ -22,6 +30,7 @@ import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow
     MatButtonModule,
     MatIconModule,
     NavigateBackArrowComponent,
+    ReactiveFormsModule,
     DatePipe,
   ],
   templateUrl: './post-detail.component.html',
@@ -29,10 +38,21 @@ import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow
 })
 export class PostDetailComponent implements OnInit {
   post!: Post;
+  comments!: MessageDto[];
+
+  // --- FORM CONTROLS ---
+  commentForm = new FormGroup({
+    message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(10),
+      Validators.maxLength(500),
+    ]),
+  });
 
   constructor(
     private route: ActivatedRoute,
-    private postsService: PostsService
+    private postsService: PostsService,
+    private commentsService: CommentsService
   ) {}
 
   ngOnInit(): void {
@@ -40,5 +60,21 @@ export class PostDetailComponent implements OnInit {
     this.postsService.getPostDetail(id).subscribe({
       next: (post) => (this.post = post),
     });
+  }
+
+  // --- SUBMIT COMMENT ---
+  onSubmit() {
+    let temp = this.commentForm.value;
+    const commentRequest = temp as { message: string };
+
+    this.commentsService
+      .createComment(this.post.id, commentRequest.message)
+      .subscribe({
+        next: (comment) => {
+          console.log(comment);
+
+          this.commentForm.reset();
+        },
+      });
   }
 }
