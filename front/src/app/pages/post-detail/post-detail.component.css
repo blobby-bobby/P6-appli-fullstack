@@ -1,4 +1,5 @@
-h1 {
+h1,
+h2 {
   font-weight: 600;
 }
 
@@ -47,5 +48,48 @@ form {
 
   .mat-mdc-form-field {
     flex: 1;
+  }
+}
+
+.comment {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  margin-right: 4rem;
+  margin-bottom: 1rem;
+
+  span {
+    font-weight: bold;
+    padding-top: 1rem;
+    text-align: right;
+  }
+
+  p {
+    background-color: rgba(245, 245, 245, 1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    margin: 0;
+  }
+}
+
+.comment-form {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .comment {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    gap: 0.5rem;
+
+    p {
+      width: 100%;
+    }
+
+    span {
+      padding-top: 0;
+      text-align: left;
+    }
   }
 }

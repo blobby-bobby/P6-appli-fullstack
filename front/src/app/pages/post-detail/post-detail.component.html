@@ -19,6 +19,11 @@
   <section class="comments">
     <h2>Commentaires</h2>
 
+    <div *ngFor="let comment of comments" class="comment">
+      <span>{{ comment.author_name }}</span>
+      <p class="comment-message">{{ comment.content }}</p>
+    </div>
+
     <form
       class="comment-form"
       (ngSubmit)="onSubmit()"

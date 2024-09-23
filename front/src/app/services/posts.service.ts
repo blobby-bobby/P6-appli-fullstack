@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/Post.interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { MessageDto } from '../interfaces/MessageDto.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +27,9 @@ export class PostsService {
     );
   }
 
-  getComments(id: number): void {
-    // TODO
+  getComments(id: number): Observable<Array<MessageDto>> {
+    return this.httpClient.get<Array<MessageDto>>(
+      `${this.baseUrl}/posts/${id}/comments`
+    );
   }
 }

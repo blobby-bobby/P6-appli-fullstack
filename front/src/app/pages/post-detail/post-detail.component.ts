@@ -57,8 +57,13 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.postsService.getPostDetail(id).subscribe({
       next: (post) => (this.post = post),
+    });
+
+    this.postsService.getComments(id).subscribe({
+      next: (comments: MessageDto[]) => (this.comments = comments),
     });
   }
 
@@ -71,8 +76,6 @@ export class PostDetailComponent implements OnInit {
       .createComment(this.post.id, commentRequest.message)
       .subscribe({
         next: (comment) => {
-          console.log(comment);
-
           this.commentForm.reset();
         },
       });
