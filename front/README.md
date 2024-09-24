@@ -1,31 +1,27 @@
-# Monde de dev - Minimum Viable Project
+# Front
 
-This is a Minimum Viable Project for **Monde de Dev**, a social network specialised in tech, adressed to web developers.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
-## Prerequisites
+## Development server
 
-- [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
-- Java 21
-- Node JS ?? or higher
-- PostgreSQL
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Installing the database
+## Code scaffolding
 
-TODO
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Installing the back-end
+## Build
 
-Run `mvn install` (or `mvn package`) to install all dependencies. Run `mvn spring-boot:run` to run the API (default port: 8080)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Installing the front end
+## Running unit tests
 
-1. Navigate to the front folder with `cd /front`
-2. Run `npm install` to install the `/node_modules` and dependencies
-3. Run `ng serve` for a dev server.
-4. Navigate to `http://localhost:4200/`.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-> The application will automatically reload if you change any of the source files.
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 
-- **Angular CLI**: use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

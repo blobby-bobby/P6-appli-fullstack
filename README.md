@@ -1,25 +1,32 @@
-# P6-Full-Stack-reseau-dev
+# Monde de dev - Minimum Viable Project
 
-## Front
+This is a Minimum Viable Project for **Monde de Dev**, a social network specialised in tech, adressed to web developers.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+## Prerequisites
 
-Don't forget to install your node_modules before starting (`npm install`).
+- [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+- Java 21
+- Node JS ?? or higher
+- PostgreSQL
 
-### Development server
+## Installing the database
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+TODO
 
-### Build
+## Installing the back-end
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `mvn install` (or `mvn package`) to install all dependencies. Run `mvn spring-boot:run` to run the API (default port: 8080)
 
-### Where to start
+## Installing the front end
 
-As you may have seen if you already started the app, a simple home page containing a logo, a title and a button is available. If you take a look at its code (in the `home.component.html`) you will see that an external UI library is already configured in the project.
+1. Navigate to the front folder with `cd /front`
+2. Run `npm install` to install the `/node_modules` and dependencies
+3. Run `ng serve` for a dev server.
+4. Navigate to `http://localhost:4200/`.
 
-This library is `@angular/material`, it's one of the most famous in the angular ecosystem. As you can see on their docs (https://material.angular.io/), it contains a lot of highly customizable components that will help you design your interfaces quickly.
+> The application will automatically reload if you change any of the source files.
 
-Note: I recommend to use material however it's not mandatory, if you prefer you can get ride of it.
+## Further help
 
-Good luck!
+- **Angular CLI**: use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Angular Material**: [Check documentation](https://material.angular.io/)
