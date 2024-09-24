@@ -40,6 +40,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class RegisterComponent {
   public showPassword: boolean = false;
+  public showPasswordConfirmation: boolean = false;
   public onErrorSubmit: boolean = false;
 
   constructor(
