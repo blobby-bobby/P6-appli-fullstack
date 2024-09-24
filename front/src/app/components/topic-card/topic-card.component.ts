@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Topic } from '../../interfaces/Topic.interface';
 import { User } from '../../interfaces/User.interface';
 import { TopicsService } from '../../services/topics.service';
-import { SessionService } from '../../services/session.service';
+import { SessionService } from '../../features/auth/services/session.service';
 import { take } from 'rxjs';
 
 @Component({

@@ -10,7 +10,7 @@ import { User } from '../../interfaces/User.interface';
 import { NgFor, NgIf } from '@angular/common';
 import { PostCardComponent } from '../../components/post-card/post-card.component';
 import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
-import { SessionService } from '../../services/session.service';
+import { SessionService } from '../../features/auth/services/session.service';
 
 @Component({
   selector: 'app-posts',

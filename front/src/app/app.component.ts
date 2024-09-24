@@ -4,8 +4,8 @@ import { Router, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { User } from './interfaces/User.interface';
 import { Observable } from 'rxjs';
-import { SessionService } from './services/session.service';
-import { AuthService } from './services/auth.service';
+import { SessionService } from './features/auth/services/session.service';
+import { AuthService } from './features/auth/services/auth.service';
 
 @Component({
   selector: 'app-root',

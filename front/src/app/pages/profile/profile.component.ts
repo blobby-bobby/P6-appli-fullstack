@@ -16,12 +16,12 @@ import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.compo
 import { TopicCardComponent } from '../../components/topic-card/topic-card.component';
 import { Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { SessionService } from '../../services/session.service';
-import { AuthService } from '../../services/auth.service';
+import { SessionService } from '../../features/auth/services/session.service';
+import { AuthService } from '../../features/auth/services/auth.service';
 import { take } from 'rxjs';
 import { User } from '../../interfaces/User.interface';
 import { UpdateRequest } from '../../interfaces/UpdateRequest.interface';
-import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
+import { AuthSuccess } from '../../features/auth/interfaces/AuthSuccess.interface';
 
 @Component({
   selector: 'app-profile',

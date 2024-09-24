@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { AuthComponent } from './pages/auth/auth.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { AuthComponent } from './features/auth/pages/auth/auth.component';
+import { LoginComponent } from './features/auth/pages/login/login.component';
+import { RegisterComponent } from './features/auth/pages/register/register.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { TopicsComponent } from './pages/topics/topics.component';
 import { ProfileComponent } from './pages/profile/profile.component';

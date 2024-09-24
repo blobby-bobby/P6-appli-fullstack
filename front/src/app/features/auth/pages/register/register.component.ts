@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthLayoutComponent } from '../../layouts/auth-layout/auth-layout.component';
+import { AuthLayoutComponent } from '../../../../layouts/auth-layout/auth-layout.component';
 import { Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,11 +15,11 @@ import {
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { NgIf } from '@angular/common';
-import { AuthService } from '../../features/auth/services/auth.service';
-import { SessionService } from '../../features/auth/services/session.service';
-import { RegisterRequest } from '../../features/auth/interfaces/RegisterRequest.interface';
-import { AuthSuccess } from '../../features/auth/interfaces/AuthSuccess.interface';
-import { User } from '../../interfaces/User.interface';
+import { AuthService } from '../../services/auth.service';
+import { SessionService } from '../../services/session.service';
+import { RegisterRequest } from '../../interfaces/RegisterRequest.interface';
+import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
+import { User } from '../../../../interfaces/User.interface';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
