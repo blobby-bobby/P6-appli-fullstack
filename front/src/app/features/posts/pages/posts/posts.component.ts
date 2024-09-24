@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { NavbarComponent } from '../../../../components/navbar/navbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
+import { NavLayoutComponent } from '../../../../layouts/nav-layout/nav-layout.component';
 import { Post } from '../../interfaces/Post.interface';
 import { PostsService } from '../../services/posts.service';
 import { RouterLink } from '@angular/router';
-import { User } from '../../interfaces/User.interface';
+import { User } from '../../../user/interfaces/User.interface';
 import { NgFor, NgIf } from '@angular/common';
-import { PostCardComponent } from '../../components/post-card/post-card.component';
-import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
-import { SessionService } from '../../features/auth/services/session.service';
+import { PostCardComponent } from '../../../../components/post-card/post-card.component';
+import { GridLayoutComponent } from '../../../../layouts/grid-layout/grid-layout.component';
+import { SessionService } from '../../../auth/services/session.service';
 
 @Component({
   selector: 'app-posts',

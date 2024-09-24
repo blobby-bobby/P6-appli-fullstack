@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { User } from './interfaces/User.interface';
+import { User } from './features/user/interfaces/User.interface';
 import { Observable } from 'rxjs';
 import { SessionService } from './features/auth/services/session.service';
 import { AuthService } from './features/auth/services/auth.service';

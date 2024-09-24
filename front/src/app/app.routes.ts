@@ -2,11 +2,11 @@ import { Routes } from '@angular/router';
 import { AuthComponent } from './features/auth/pages/auth/auth.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { RegisterComponent } from './features/auth/pages/register/register.component';
-import { PostsComponent } from './pages/posts/posts.component';
-import { TopicsComponent } from './pages/topics/topics.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { PostDetailComponent } from './pages/post-detail/post-detail.component';
-import { NewPostComponent } from './pages/new-post/new-post.component';
+import { PostsComponent } from './features/posts/pages/posts/posts.component';
+import { TopicsComponent } from './features/topics/pages/topics/topics.component';
+import { ProfileComponent } from './features/user/pages/profile/profile.component';
+import { PostDetailComponent } from './features/posts/pages/post-detail/post-detail.component';
+import { NewPostComponent } from './features/posts/pages/new-post/new-post.component';
 
 export const routes: Routes = [
   { path: '', component: AuthComponent },

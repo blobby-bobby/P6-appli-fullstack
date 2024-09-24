@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RegisterRequest } from '../interfaces/RegisterRequest.interface';
 import { AuthSuccess } from '../interfaces/AuthSuccess.interface';
-import { User } from '../../../interfaces/User.interface';
+import { User } from '../../user/interfaces/User.interface';
 import { LoginRequest } from '../interfaces/LoginRequest.unterface';
-import { UpdateRequest } from '../../../interfaces/UpdateRequest.interface';
+import { UpdateRequest } from '../../user/interfaces/UpdateRequest.interface';
 
 @Injectable({
   providedIn: 'root',

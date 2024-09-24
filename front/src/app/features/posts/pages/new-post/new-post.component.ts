@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
-import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow/navigate-back-arrow.component';
+import { NavLayoutComponent } from '../../../../layouts/nav-layout/nav-layout.component';
+import { NavigateBackArrowComponent } from '../../../../components/navigate-back-arrow/navigate-back-arrow.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import {
@@ -12,8 +12,8 @@ import {
 } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { TopicsService } from '../../services/topics.service';
-import { Topic } from '../../interfaces/Topic.interface';
+import { TopicsService } from '../../../topics/services/topics.service';
+import { Topic } from '../../../topics/interfaces/Topic.interface';
 import { map, Observable, take } from 'rxjs';
 import { PostsService } from '../../services/posts.service';
 import { Post } from '../../interfaces/Post.interface';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
+import { NavLayoutComponent } from '../../../../layouts/nav-layout/nav-layout.component';
 import {
   FormControl,
   FormGroup,
@@ -10,18 +10,18 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { Topic } from '../../interfaces/Topic.interface';
+import { Topic } from '../../../topics/interfaces/Topic.interface';
 import { NgFor, NgIf } from '@angular/common';
-import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
-import { TopicCardComponent } from '../../components/topic-card/topic-card.component';
+import { GridLayoutComponent } from '../../../../layouts/grid-layout/grid-layout.component';
+import { TopicCardComponent } from '../../../topics/components/topic-card/topic-card.component';
 import { Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { SessionService } from '../../features/auth/services/session.service';
-import { AuthService } from '../../features/auth/services/auth.service';
+import { SessionService } from '../../../auth/services/session.service';
+import { AuthService } from '../../../auth/services/auth.service';
 import { take } from 'rxjs';
 import { User } from '../../interfaces/User.interface';
 import { UpdateRequest } from '../../interfaces/UpdateRequest.interface';
-import { AuthSuccess } from '../../features/auth/interfaces/AuthSuccess.interface';
+import { AuthSuccess } from '../../../auth/interfaces/AuthSuccess.interface';
 
 @Component({
   selector: 'app-profile',

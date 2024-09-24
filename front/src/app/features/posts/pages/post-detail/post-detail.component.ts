@@ -3,12 +3,12 @@ import { Post } from '../../interfaces/Post.interface';
 import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
 import { DatePipe, NgFor, NgIf } from '@angular/common';
-import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
+import { NavLayoutComponent } from '../../../../layouts/nav-layout/nav-layout.component';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow/navigate-back-arrow.component';
+import { NavigateBackArrowComponent } from '../../../../components/navigate-back-arrow/navigate-back-arrow.component';
 import { CommentsService } from '../../services/comments.service';
 
 import {

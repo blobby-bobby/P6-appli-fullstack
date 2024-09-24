@@ -19,7 +19,7 @@ import { AuthService } from '../../services/auth.service';
 import { SessionService } from '../../services/session.service';
 import { RegisterRequest } from '../../interfaces/RegisterRequest.interface';
 import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
-import { User } from '../../../../interfaces/User.interface';
+import { User } from '../../../user/interfaces/User.interface';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({

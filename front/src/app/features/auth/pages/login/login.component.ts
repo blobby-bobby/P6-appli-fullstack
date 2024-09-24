@@ -15,7 +15,7 @@ import { LoginRequest } from '../../interfaces/LoginRequest.unterface';
 import { AuthService } from '../../services/auth.service';
 import { SessionService } from '../../services/session.service';
 import { AuthSuccess } from '../../interfaces/AuthSuccess.interface';
-import { User } from '../../../../interfaces/User.interface';
+import { User } from '../../../user/interfaces/User.interface';
 import { NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 @Component({

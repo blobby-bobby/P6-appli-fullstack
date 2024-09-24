@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NavLayoutComponent } from '../../layouts/nav-layout/nav-layout.component';
+import { NavLayoutComponent } from '../../../../layouts/nav-layout/nav-layout.component';
 import { TopicsService } from '../../services/topics.service';
 import { Topic } from '../../interfaces/Topic.interface';
-import { GridLayoutComponent } from '../../layouts/grid-layout/grid-layout.component';
+import { GridLayoutComponent } from '../../../../layouts/grid-layout/grid-layout.component';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { TopicCardComponent } from '../../components/topic-card/topic-card.component';
