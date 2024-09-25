@@ -3,9 +3,9 @@ spring:
   main.allow-circular-references: false
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:15432/mdd
-    username: postgres
-    password: example
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,7 +22,7 @@ spring:
 #JWT Security
 mdd.api:
   lifespan: 9999 #jwt duration in minutes
-  secret: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBB11111111111111111111111111111
+  secret: ${JWT_SECRET}
   dev-url: ${server.servlet.context-path}/
   prod-url: test.com
   files-upload: files-upload
