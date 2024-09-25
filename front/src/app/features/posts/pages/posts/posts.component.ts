@@ -55,6 +55,10 @@ export class PostsComponent implements OnInit {
         );
       } else if (sortBy === 'title') {
         this.posts = this.posts.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (sortBy === 'author') {
+        this.posts = this.posts.sort((a, b) =>
+          a.author_name.localeCompare(b.author_name)
+        );
       }
     }
   }
