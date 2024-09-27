@@ -62,7 +62,6 @@ export class ProfileComponent implements OnInit {
   }
 
   // --- FORM CONTROLS ---
-
   public profileForm = new FormGroup({
     name: new FormControl('', [
       Validators.minLength(3),
@@ -82,6 +81,11 @@ export class ProfileComponent implements OnInit {
     ]),
   });
 
+  /**
+   * Fetch the current user's subscriptions and the update profile's form values.
+   *
+   * @return {void}
+   */
   public ngOnInit(): void {
     this.authService
       .me()
@@ -104,6 +108,7 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  // --- SUBMIT ---
   onSubmit(): void {
     const updateProfileRequest = this.profileForm.value as UpdateRequest;
     this.authService.update(updateProfileRequest).subscribe({

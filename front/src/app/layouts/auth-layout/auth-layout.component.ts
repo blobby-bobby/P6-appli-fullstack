@@ -11,5 +11,9 @@ import { NavigateBackArrowComponent } from '../../components/navigate-back-arrow
   styleUrl: './auth-layout.component.css',
 })
 export class AuthLayoutComponent {
+  /**
+   * This component is used in the authentification pages (login, register)
+   */
+
   @Input() title: string = '';
 }

@@ -52,18 +52,25 @@ export class NewPostComponent implements OnInit {
     });
   }
 
+  // --- FORM CONTROLS ---
   public newPostForm = new FormGroup({
     topic: new FormControl('', [Validators.required]),
     title: new FormControl('', [Validators.required]),
     content: new FormControl('', [Validators.required]),
   });
 
+  /**
+   * Retrieves all topic names to be rendered in the select input of the create post form.
+   *
+   * @return {Observable<string[]>} An observable array of topic names.
+   */
   getTopicNames(): Observable<string[]> {
     return this.topicsService
       .getAllTopics()
       .pipe(map((topics: Topic[]) => topics.map((topic: Topic) => topic.name)));
   }
 
+  // --- SUBMIT FORM ---
   public onSubmit(): void {
     const postSubmit = this.newPostForm.value as Post;
 

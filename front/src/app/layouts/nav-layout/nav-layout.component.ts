@@ -8,4 +8,8 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   templateUrl: './nav-layout.component.html',
   styleUrl: './nav-layout.component.css',
 })
-export class NavLayoutComponent {}
+export class NavLayoutComponent {
+  /**
+   * This component is used to display the layout of a loggedIn page, with a responsive navbar
+   */
+}
