@@ -14,7 +14,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-// This class helps us to validate the generated jwt token
+/**
+ * This class helps to validate the generated jwt token
+ * Authorization Bearer - Header format.
+ * DO NOT TOUCH unless necessary
+*/
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
     private final JwtService jwtService;

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CommentService {
     /**
-     * Tries to create and save a comment
+     * Create and save a comment to the corresponding post
      * @param comment Comment to be created
      * @throws EntityNotFoundException post id not found
      */
