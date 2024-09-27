@@ -9,15 +9,17 @@ This is a Minimum Viable Project for **Monde de Dev**, a social network speciali
 - Node JS ?? or higher
 - PostgreSQL
 
-## Installing the database
+## Setting up the project
+
+### Installing the database
 
 TODO
 
-## Installing the back-end
+### Installing the back-end
 
 Run `mvn install` (or `mvn package`) to install all dependencies. Run `mvn spring-boot:run` to run the API (default port: 8080)
 
-## Installing the front end
+### Installing the front end
 
 1. Navigate to the front folder with `cd /front`
 2. Run `npm install` to install the `/node_modules` and dependencies
