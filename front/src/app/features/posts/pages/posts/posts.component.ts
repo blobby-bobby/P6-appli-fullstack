@@ -8,7 +8,7 @@ import { PostsService } from '../../services/posts.service';
 import { RouterLink } from '@angular/router';
 import { User } from '../../../user/interfaces/User.interface';
 import { NgFor, NgIf } from '@angular/common';
-import { PostCardComponent } from '../../../../components/post-card/post-card.component';
+import { PostCardComponent } from '../../components/post-card/post-card.component';
 import { GridLayoutComponent } from '../../../../layouts/grid-layout/grid-layout.component';
 import { SessionService } from '../../../auth/services/session.service';
 
@@ -41,8 +41,8 @@ export class PostsComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.sessionService.user;
 
-    this.postsService.getAllPosts(this.user!.id).subscribe((posts) => {
-      this.posts = posts;
+    this.postsService.getAllPosts(this.user!.id).subscribe({
+      next: (posts) => (this.posts = posts),
     });
   }
 
