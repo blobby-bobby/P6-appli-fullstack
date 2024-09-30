@@ -40,9 +40,12 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.sessionService.user;
-
     this.postsService.getAllPosts(this.user!.id).subscribe({
-      next: (posts) => (this.posts = posts),
+      next: (posts) =>
+        (this.posts = posts.sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        )),
     });
   }
 
@@ -52,6 +55,11 @@ export class PostsComponent implements OnInit {
         this.posts = this.posts.sort(
           (a, b) =>
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+      } else if (sortBy === 'date_reverse') {
+        this.posts = this.posts.sort(
+          (a, b) =>
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
         );
       } else if (sortBy === 'title') {
         this.posts = this.posts.sort((a, b) => a.title.localeCompare(b.title));
